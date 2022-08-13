@@ -53,94 +53,21 @@ if (isset($_SESSION['email'])) {
         </div>
 
         <div class="form-modal">
-
-            <div class="form-toggle">
-                <button id="aktivne-toggle" onclick="toggleAktivne()">Aktivne</button>
-                <button id="izvrsene-toggle" onclick="toggleIzvrsene()">Izvrsene</button>
-                <button id="odbijene-toggle" onclick="toggleOdbijene()"> Odbijene</button>
-            </div>
-            <div id="divaktivne" class="divaktivne">
-                <div class="content">
-
-                    <div class="container">
-
-                        <div class="table-responsive" id="tabela-aktivne">
-
-
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Broj Stola</th>
-                                        <th scope="col">Ukupna Cena</th>
-                                        <th scope="col">Vreme narudzbine</th>
-                                        <th scope="col">Napomena</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-
-                                <tbody id="aktivne">
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="divizvrsene" class="divizvrsene">
-                <div class="content">
-
-                    <div class="container">
-
-
-                        <div class="table-responsive">
-
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Broj Stola</th>
-                                        <th scope="col">Ukupna Cena</th>
-                                        <th scope="col">Vreme narudzbine</th>
-                                        <th scope="col">Napomena</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-
-                                <tbody id="izvrsene">
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="divodbijene" class="divodbijene">
-
-                <div class="content">
-
-                    <div class="container">
-
-
-                        <div class="table-responsive">
-
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Broj Stola</th>
-                                        <th scope="col">Ukupna Cena</th>
-                                        <th scope="col">Vreme narudzbine</th>
-                                        <th scope="col">Napomena</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-                                <tbody id="odbijene">
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <img class="restoran" src="../../slike/restoran.jpg">
+            <div class="duzina1">1</div>
+            <div class="duzina2">2</div>
+            <div class="duzina3">3</div>
+            <div class="duzina4">4</div>
+            <div class="duzina5">5</div>
+            <div class="duzina6">6</div>
+            <div class="duzina7">7</div>
+            <div class="duzina8">8</div>
+            <div class="duzina9">9</div>
+            <div class="duzina10">10</div>
+            <div class="duzina11">11</div>
+            <div class="duzina12">12</div>
         </div>
+        
         <script src="narudzbine.js"> </script>
 
 
