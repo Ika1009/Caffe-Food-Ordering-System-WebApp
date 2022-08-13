@@ -95,13 +95,13 @@ if (isset($_SESSION['user_pin'])) {
                         <select class="kategorija artikl_input_kategorija" name="kategorija" id="kategorije" required>
                             <option class="kategorija-naslov" value="" selected disabled hidden>Izaberi kategoriju</option>
                         </select><br>
-                        <button class="dugdodajkategoriju">dodaj kategoriju</button>
+                        <button type="button" class="dugdodajkategoriju">dodaj kategoriju</button>
                         <div class="popup-box-container">
                             <div class="products-container">
                                 <button class="btn1"><i class="fa fa-close"></i></button>
-                                <input class="popuptext1" id=add-box name="dodavanjeBox" placeholder="ime kategorije">
+                                <input class="popuptext1" id=add-box name="dodavanjeBox" placeholder="ime kategorije" required>
                                 <div class="divokbtn">
-                                    <input class="ok-btn" type="submit" value="dodaj" id="dodajopciju" name="dodajKategoriju">
+                                    <input class="ok-btn" type="button" value="dodaj" id="dodajopciju" name="dodajKategoriju">
                                     <input class="ok-btn1" type="button" value="remove" id="rmv">
                                 </div>
                             </div>

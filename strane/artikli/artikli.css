@@ -349,7 +349,7 @@
 .popup-box-container {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   border: #333 solid 1px;
-  background-color: #FFB266;
+  background-color: #fff;
   width: 51%;
   height: 13vh;
   text-align: center;
@@ -378,12 +378,16 @@
   -ms-transform: translate(-50%, -50%);
   border: none;
   border-radius: 50%;
-  color: #ffb266;
-  background: #333;
+  color: #fff;
+  background: #ffb266;
   text-align: center;
   padding: 6px 8px;
   font-size: 11px;
   cursor: pointer;
+}
+
+.btn1:hover .btn1 {
+  background: #f69b41;
 }
 
 
@@ -639,7 +643,7 @@
 }
 
 .submit:hover {
-  background-color: black;
+  background-color: #f69b41;
 }
 
 
