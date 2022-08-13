@@ -112,7 +112,6 @@ if (isset($_SESSION['user_pin'])) {
                 </div>
             </div>
         </div>
-        <script src="artikliJS.js"></script>
         <script src="artikliFunctionsJS.js"></script>
         <script>
             let popup = document.getElementById("popup-overlay1");

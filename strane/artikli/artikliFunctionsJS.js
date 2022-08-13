@@ -1,4 +1,97 @@
+// Izvrsavaju pri ulasku na sajt
 
+let ajax = new XMLHttpRequest();
+ajax.open("GET", "./APIs/data.php", true);
+ajax.send();
+ajax.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        let data = JSON.parse(this.responseText);
+        // console.log(data);
+        let html = "";
+        for (let i = 0; i < data.length; i++) {
+            let id = data[i].id;
+            let ime = data[i].ime;
+            let cena = data[i].cena;
+            let slika = data[i].slika;
+            let opis = data[i].opis;
+            let popust = data[i].popust;
+            let kategorija = data[i].kategorija;
+            html += "<div class=card>";
+            html += "<input class=\"id_artikla\" data-id=\"" + id + "\" type=\"hidden\">";
+            html += "<p class=kategorija_artikla hidden>" + kategorija + "</p>"
+            html += "<div class=card-bg>";
+            html += "<img src=artikliSlike/" + id + "." + slika + ">";
+            html += "</div>";
+            html += "<div class=card-context>";
+            html += "<div class=dark-bg></div>";
+            html += "<div class=ime><h2>" + ime + "</h2></div>";
+            if (popust != '0') {
+                html += "<div class=disc>" + popust + "%</div>";
+            }
+
+            if (popust != '0') {
+                html += "<h3 class=price>" + cena * (100 - parseInt(popust)) / 100 + " RSD</h3>";
+                html += "<h3 class=priceprecrtano>" + cena + " RSD</h3>"; // precrtaj
+            } else {
+                html += "<h3 class=price>" + cena + " RSD</h3>";
+            }
+            html += "<p>" + opis + "</p>";
+            html += "</div>";
+            html += "<div class=card-icons>";
+            html += "<ul><li>"
+            html += "<ion-icon name=close-outline onclick=onClickDugmeZaBrisanje(this)>Edit</ion-icon>";
+            html += "</li><li>"
+            html += "<ion-icon name=pencil onclick=dugmeZaMenjanje(this)>Delete</ion-icon>";
+            html += "</li></ul>";
+            html += "</div>";
+            html += "</div>";
+
+
+
+        }
+        document.getElementById("data").innerHTML += html;
+    }
+};
+
+
+
+let ajax1 = new XMLHttpRequest();
+ajax1.open("GET", "./APIs/kategorijeDobivanje.php", true);
+ajax1.send();
+ajax1.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        let data = JSON.parse(this.responseText);
+        let html = "";
+        html += "<a class=kategorisani onclick=kategorije(this)>Svi</a>";
+        for (let i = 0; i < data.length; i++) {
+            let kategorija = data[i].ime_kategorije;
+            html += "<a class=kategorisani onclick=kategorije(this)>" + kategorija + "</a>";
+        }
+        document.getElementById("myDropdown").innerHTML += html;
+    }
+};
+
+
+let elementosKategorije = document.getElementById("kategorije")
+let ajaxKategorije = new XMLHttpRequest();
+ajaxKategorije.open("GET", "./APIs/kategorijeDobivanje.php", true);
+ajaxKategorije.send();
+ajaxKategorije.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        let data = JSON.parse(this.responseText);
+        console.log(data);
+        let html = "";
+        for (let i = 0; i < data.length; i++) {
+            let kategorija = data[i].ime_kategorije;
+            console.log(kategorija);
+            var option = document.createElement("option");
+            option.text = kategorija;
+            elementosKategorije.add(option);
+        }
+    }
+};
+
+// Funkcije
 
 function dugmeZaMenjanje(element) {
 
@@ -18,7 +111,7 @@ function dugmeZaMenjanje(element) {
         popust = elementos.getElementsByClassName('disc')[0].innerHTML;
     }
     let opis = elementos.getElementsByTagName('p')[0].innerHTML;
-    let kategorija = elementos.getElementsByClassName('cat')[0].innerHTML;
+    let kategorija = elementos.getElementsByClassName('kategorija_artikla')[0].innerHTML;
 
 
     document.querySelectorAll(".artikl_input_id")[0].value = id;
@@ -36,7 +129,7 @@ function dugmeZaMenjanje(element) {
 // za brisanje
 function onClickDugmeZaBrisanje(element) {
     let nastavitiProvera = confirm("Jel ste sigurni da želite da obrišete ovaj artikal?");
-    console.log(nastavitiProvera); // OK = true, Cancel = false
+    // console.log(nastavitiProvera); // OK = true, Cancel = false
     if (nastavitiProvera == false) {
         return;
     }
@@ -66,20 +159,6 @@ function onClickDugmeZaBrisanje(element) {
     elementos.remove()
 
 }
-ajax1.open("GET", "./APIs/kategorijeDobivanje.php", true);
-ajax1.send();
-ajax1.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-        let data = JSON.parse(this.responseText);
-        let html = "";
-        html += "<a class=kategorisani onclick=kategorije(this)>Svi</a>";
-        for (let i = 0; i < data.length; i++) {
-            let kategorija = data[i].ime_kategorije;
-            html += "<a class=kategorisani onclick=kategorije(this)>" + kategorija + "</a>";
-        }
-        document.getElementById("myDropdown").innerHTML += html;
-    }
-};
 
 const search = () => {
     const searchbox = document.getElementById("search-item").value.toUpperCase();
@@ -167,14 +246,14 @@ document.querySelector("#rmv").addEventListener("click", function (event) {
 
 document.querySelector("#dodajopciju").addEventListener("click", function (event) {
     event.preventDefault();
-    console.log("alo");
+    // console.log("alo");
     var txt = document.getElementById("add-box");
     var kategorije = document.getElementById("kategorije");
     var option = document.createElement("option");
     option.text = txt.value;
     kategorije.add(option);
     kategorije.selectedIndex = kategorije.length - 1;
-    console.log(kategorije.selectedIndex);
+    // console.log(kategorije.selectedIndex);
     let ajax = new XMLHttpRequest();
     ajax.open("GET", "./APIs/dodajKategoriju.php?addNewCategory=" + txt.value, true);
     ajax.send();
@@ -191,7 +270,7 @@ var add_artikl_pom = 0;
 
 document.querySelector("#artikl_form").addEventListener("submit", function (event) {
     event.preventDefault();
-    console.log("alo");
+    // console.log("alo");
 
     var artikl_form = document.getElementById("artikl_form");
 
