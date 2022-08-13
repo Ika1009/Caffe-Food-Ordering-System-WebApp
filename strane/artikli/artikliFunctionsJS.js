@@ -17,7 +17,7 @@ function dugmeZaMenjanje(element) {
         cena = elementos.getElementsByClassName('priceprecrtano')[0].innerHTML;
         popust = elementos.getElementsByClassName('disc')[0].innerHTML;
     }
-    let opis = elementos.getElementsByClassName('desc')[0].innerHTML;
+    let opis = elementos.getElementsByTagName('p')[0].innerHTML;
     let kategorija = elementos.getElementsByClassName('cat')[0].innerHTML;
 
 
@@ -40,8 +40,8 @@ function onClickDugmeZaBrisanje(element) {
     if (nastavitiProvera == false) {
         return;
     }
-    let elementos = element.closest('.product');
-    let ime = elementos.getElementsByTagName('h3')[0].innerHTML;
+    let elementos = element.closest('.card');
+    let ime = elementos.getElementsByTagName('h2')[0].innerHTML;
     let id = elementos.getElementsByClassName('id_artikla')[0].getAttribute("data-id");
 
     let slika = elementos.getElementsByTagName('img')[0].getAttribute("src");
