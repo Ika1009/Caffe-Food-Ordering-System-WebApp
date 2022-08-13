@@ -348,8 +348,8 @@
 
 .popup-box-container {
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-  border: #333 solid 1px;
-  background-color: #fff;
+  border: #4c4c4c solid 0.5px;
+  background-color: #ebebeb;
   width: 51%;
   height: 13vh;
   text-align: center;
@@ -400,7 +400,7 @@
   margin-top: 2rem;
   border-radius: 20px;
   border: none;
-  background: #ebebeb;
+  background: #fff;
   outline: none;
   font-weight: bold;
   transition: 0.4s;
@@ -420,10 +420,10 @@
   padding: 3px 7px 5px 7px;
   width: 49%;
   margin-right: 1%;
-  background-color: #333;
+  background-color: #FFB266;
   border-radius: 10px;
   cursor: pointer;
-  color: #FFB266;
+  color: #fff;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   border: none;
   font-size: 14px;
@@ -434,10 +434,10 @@
 .ok-btn1 {
   padding: 3px 7px 5px 7px;
   width: 49%;
-  background-color: #333;
+  background-color: #FFB266;
   border-radius: 10px;
   cursor: pointer;
-  color: #FFB266;
+  color: #fff;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
   border: none;
   font-size: 14px;
