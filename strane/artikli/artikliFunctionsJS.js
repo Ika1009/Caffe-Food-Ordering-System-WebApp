@@ -9,13 +9,11 @@ function dugmeZaMenjanje(element) {
     let slika = elementos.getElementsByTagName('img')[0].getAttribute("src");
     let cena;
     let popust;
-    if(typeof(elementos.getElementsByClassName('priceprecrtano')[0]) == "undefined")
-    {
+    if (typeof (elementos.getElementsByClassName('priceprecrtano')[0]) == "undefined") {
         cena = elementos.getElementsByClassName('price')[0].innerHTML;
         popust = 0;
     }
-    else
-    {
+    else {
         cena = elementos.getElementsByClassName('priceprecrtano')[0].innerHTML;
         popust = elementos.getElementsByClassName('disc')[0].innerHTML;
     }
@@ -127,7 +125,7 @@ document.querySelector("#dodajopciju").addEventListener("click", function (event
     var option = document.createElement("option");
     option.text = txt.value;
     kategorije.add(option);
-    kategorije.selectedIndex = kategorije.length-1;
+    kategorije.selectedIndex = kategorije.length - 1;
     console.log(kategorije.selectedIndex);
     let ajax = new XMLHttpRequest();
     ajax.open("GET", "./APIs/dodajKategoriju.php?addNewCategory=" + txt.value, true);
@@ -157,15 +155,21 @@ document.querySelector("#artikl_form").addEventListener("submit", function (even
     ajax.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let response = this.responseText;
+            console.log(response);
             if (response == "updatedWithImage" || response == "updated!image") { // ne ulazi ovde uopste ?
-                console.log("updatedWithImage");
+                // console.log("updatedWithImage");
                 let ajax = new XMLHttpRequest();
+                document.getElementById("data").innerHTML = "<div class=divdugme>";
+                document.getElementById("data").innerHTML += "<button type=dodaj class=dugmeZaDodavanje onclick=otvoriPopup('novi_kreiram')>";
+                document.getElementById("data").innerHTML += "<ion-icon name=add class=hydrated aria-label=add></ion-icon></i>";
+                document.getElementById("data").innerHTML += "</button>";
+                document.getElementById("data").innerHTML += "</div>";
+
                 ajax.open("GET", "./APIs/data.php", true);
                 ajax.send();
                 ajax.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
                         let data = JSON.parse(this.responseText);
-                        console.log(data);
                         let html = "";
                         for (let i = 0; i < data.length; i++) {
                             let id = data[i].id;
