@@ -33,11 +33,12 @@ ajax.onreadystatechange = function () {
       } else {
         html += "<h3 class=price>" + cena + " RSD</h3>";
       }
-      html += "<p><ion-icon class=dodajukolica name=add-circle-outline></ion-icon> <button class=kolicinaukolica>" + kolicina + "</button>  <ion-icon class=oduzmiizkolica name=remove-circle-outline></ion-icon> </p>";
+      html += "<p> <ion-icon class=dodajukolica name=add-circle-outline>Dodaj</ion-icon> "
+      html += "<button class=kolicinaukolica>" + kolicina + "</button>"
+      html += "<ion-icon class=oduzmiizkolica name=remove-circle-outline>Oduzmi</ion-icon> </p>";
       html += "</div>";
       html += "</div>";
-      html += "</div>";
-      html += "</div>";
+
     }
 
     document.getElementById("data").innerHTML += html;
@@ -84,7 +85,7 @@ ajax.onreadystatechange = function () {
 
     function addCartClicked(element) {
       let button = element.target;
-      let shopProduct = button.parentElement.parentElement;
+      let shopProduct = button.parentElement.parentElement.parentElement;
       let title = shopProduct.getElementsByTagName("h2")[0].innerHTML;
       let price = shopProduct.getElementsByClassName("price")[0].innerHTML;
       let productImg = shopProduct
@@ -271,15 +272,15 @@ const kategorije = (element) => {
   const productname = storeitems.getElementsByTagName("strong");
   const cale = document.getElementsByClassName("kategorisani");
   for (let i = 0; i < cale.length; i++) {
-      if (cale[i].classList.contains("svi")) {
-          cale[i].classList.remove("svi");
-      } 
-      
-      if (cale[i].innerHTML === element.innerHTML) {
-          cale[i].classList.add("svi");
-      }
+    if (cale[i].classList.contains("svi")) {
+      cale[i].classList.remove("svi");
+    }
+
+    if (cale[i].innerHTML === element.innerHTML) {
+      cale[i].classList.add("svi");
+    }
   }
-  
+
   if (element.innerHTML === 'Svi') {
     for (let i = 0; i < product.length; i++) {
       product[i].style.display = "";
@@ -365,3 +366,5 @@ dugme.addEventListener("click", () => {
     dropdown.classList.add("show");
   }
 });
+
+

@@ -38,7 +38,7 @@ ajax.onreadystatechange = function () {
             html += "<ul><li>"
             html += "<ion-icon name=close-outline onclick=onClickDugmeZaBrisanje(this)>Edit</ion-icon>";
             html += "</li><li>"
-            html += "<ion-icon name=pencil onclick=dugmeZaMenjanje(this)></ion-icon>";
+            html += "<ion-icon name=pencil onclick=dugmeZaMenjanje(this)>Delete</ion-icon>";
             html += "</li></ul>";
             html += "</div>";
             html += "</div>";
