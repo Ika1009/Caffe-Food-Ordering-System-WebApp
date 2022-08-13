@@ -78,7 +78,7 @@ if (isset($_SESSION['user_pin'])) {
                 <div id="signup-form">
                     <form id="artikl_form" class="forma" name="form1" action="" method="post" enctype="multipart/form-data">
                         <div class="fajl">
-                            <input class="file" id="file" type="file" name="file" accept=".png, .jpg, .jpeg" required>
+                            <input class="file" id="file" type="file" name="file" accept=".png, .jpg, .jpeg">
                             <label for="file" class="upload-label">
                                 <div class="image">
                                     <img src="" alt="">
@@ -99,7 +99,7 @@ if (isset($_SESSION['user_pin'])) {
                         <div class="popup-box-container">
                             <div class="products-container">
                                 <button type="button" class="btn1"><i class="fa fa-close"></i></button>
-                                <input class="popuptext1" id=add-box name="dodavanjeBox" placeholder="ime kategorije" required>
+                                <input class="popuptext1" id=add-box name="dodavanjeBox" placeholder="ime kategorije">
                                 <div class="divokbtn">
                                     <input class="ok-btn" type="button" value="dodaj" id="dodajopciju" name="dodajKategoriju">
                                     <input class="ok-btn1" type="button" value="remove" id="rmv">
