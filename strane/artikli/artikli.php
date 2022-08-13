@@ -98,7 +98,7 @@ if (isset($_SESSION['user_pin'])) {
                         <button type="button" class="dugdodajkategoriju">dodaj kategoriju</button>
                         <div class="popup-box-container">
                             <div class="products-container">
-                                <button class="btn1"><i class="fa fa-close"></i></button>
+                                <button type="button" class="btn1"><i class="fa fa-close"></i></button>
                                 <input class="popuptext1" id=add-box name="dodavanjeBox" placeholder="ime kategorije" required>
                                 <div class="divokbtn">
                                     <input class="ok-btn" type="button" value="dodaj" id="dodajopciju" name="dodajKategoriju">
