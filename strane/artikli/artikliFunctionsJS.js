@@ -2,33 +2,21 @@
 
 function dugmeZaMenjanje(element) {
 
-    let elementos = element.closest('.product');
+    let elementos = element.closest('.card');
 
     let id = elementos.getElementsByClassName('id_artikla')[0].getAttribute("data-id");
-    let ime = elementos.getElementsByTagName('h3')[0].innerHTML;
+    let ime = elementos.getElementsByTagName('h2')[0].innerHTML;
     let slika = elementos.getElementsByTagName('img')[0].getAttribute("src");
-    let cena;
-    let popust;
-    if(typeof(elementos.getElementsByClassName('priceprecrtano')[0]) == "undefined")
-    {
-        cena = elementos.getElementsByClassName('price')[0].innerHTML;
-        popust = 0;
-    }
-    else
-    {
-        cena = elementos.getElementsByClassName('priceprecrtano')[0].innerHTML;
-        popust = elementos.getElementsByClassName('disc')[0].innerHTML;
-    }
-    let opis = elementos.getElementsByClassName('desc')[0].innerHTML;
-    let kategorija = elementos.getElementsByClassName('cat')[0].innerHTML;
-
+    let cena = elementos.getElementsByClassName('priceprecrtano')[0].innerHTML;
+    let popust = elementos.getElementsByClassName('disc')[0].innerHTML;
+    let opis = elementos.getElementsByClassName('p')[0].innerHTML;
 
     document.querySelectorAll(".artikl_input_id")[0].value = id;
     document.querySelectorAll(".artikl_input_ime")[0].value = ime;
     document.querySelectorAll(".artikl_input_cena")[0].value = parseInt(cena);
     document.querySelectorAll(".artikl_input_popust")[0].value = parseInt(popust);
     document.querySelectorAll(".artikl_input_opis")[0].value = opis;
-    document.querySelectorAll(".artikl_input_kategorija")[0].value = kategorija;
+    // document.querySelectorAll(".artikl_input_kategorija")[0].value = kategorija;
 
     otvoriPopup();
 
@@ -42,8 +30,6 @@ function onClickDugmeZaBrisanje(element) {
     if (nastavitiProvera == false) {
         return;
     }
-
-    //cookie
     let elementos = element.closest('.product');
     let ime = elementos.getElementsByTagName('h3')[0].innerHTML;
     let id = elementos.getElementsByClassName('id_artikla')[0].getAttribute("data-id");
@@ -73,11 +59,11 @@ function onClickDugmeZaBrisanje(element) {
 const search = () => {
     const searchbox = document.getElementById("search-item").value.toUpperCase();
     const storeitems = document.getElementById("data");
-    const product = document.querySelectorAll(".product");
-    const productname = storeitems.getElementsByTagName("h3");
+    const product = document.querySelectorAll(".card");
+    const productname = storeitems.getElementsByTagName("h2");
 
     for (let i = 0; i < productname.length; i++) {
-        let match = product[i].getElementsByTagName("h3")[0];
+        let match = product[i].getElementsByTagName("h2")[0];
 
         if (match) {
             let textvalue = match.textContent || match.innerHTML
@@ -90,19 +76,18 @@ const search = () => {
         }
     }
 }
-const navToggler = document.querySelector(".nav-toggler");
-navToggler.addEventListener("click", navToggle);
+const doc = document;
+const menuOpen = doc.querySelector(".menu");
+const menuClose = doc.querySelector(".close");
+const overlay = doc.querySelector(".overlay");
 
-function navToggle() {
-    navToggler.classList.toggle("active");
-    const nav = document.querySelector(".nav");
-    nav.classList.toggle("open");
-    if (nav.classList.contains("open")) {
-        nav.style.maxHeight = nav.scrollHeight + "px";
-    } else {
-        nav.removeAttribute("style");
-    }
-}
+menuOpen.addEventListener("click", () => {
+  overlay.classList.add("overlay--active");
+});
+
+menuClose.addEventListener("click", () => {
+  overlay.classList.remove("overlay--active");
+});
 
 document.querySelector("#rmv").addEventListener("click", function (event) {
     var kategorije = document.getElementById("kategorije")
@@ -121,14 +106,12 @@ document.querySelector("#rmv").addEventListener("click", function (event) {
 
 document.querySelector("#dodajopciju").addEventListener("click", function (event) {
     event.preventDefault();
-    // console.log("alo");
+    console.log("alo");
     var txt = document.getElementById("add-box");
     var kategorije = document.getElementById("kategorije");
     var option = document.createElement("option");
     option.text = txt.value;
     kategorije.add(option);
-    kategorije.selectedIndex = kategorije.length-1;
-    console.log(kategorije.selectedIndex);
     let ajax = new XMLHttpRequest();
     ajax.open("GET", "./APIs/dodajKategoriju.php?addNewCategory=" + txt.value, true);
     ajax.send();
@@ -157,7 +140,8 @@ document.querySelector("#artikl_form").addEventListener("submit", function (even
     ajax.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let response = this.responseText;
-            if (response == "updatedWithImage" || response == "updated!image") { // ne ulazi ovde uopste ?
+            if (response == "updatedWithImage") { // ne ulazi ovde uopste ?
+               
                 console.log("updatedWithImage");
                 let ajax = new XMLHttpRequest();
                 ajax.open("GET", "./APIs/data.php", true);
@@ -267,4 +251,3 @@ document.querySelector("#artikl_form").addEventListener("submit", function (even
         }
     };
 });
-
