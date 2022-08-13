@@ -16,6 +16,7 @@ if (isset($_SESSION['user_pin'])) {
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a572b64406.js" crossorigin="anonymous"></script>
         <title>Artikli</title>
         <link href="../../slike/hurryup_logo2.ico" rel="icon">
         <link rel="stylesheet" href="artikli.css">
@@ -32,7 +33,7 @@ if (isset($_SESSION['user_pin'])) {
                     <li><a href="../ponuda/ponuda.php">Ponuda</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="../../login.php">Moj Nalog</a>
+            <a class="cta" href="../../login.php">Prijavi se</a>
             <p class="menu cta">Menu</p>
         </header>
         <div class="overlay">
@@ -43,13 +44,28 @@ if (isset($_SESSION['user_pin'])) {
                 <a href="../ponuda/ponuda.php">Ponuda</a>
             </div>
         </div>
-        <input class="search" type="text" id="search-item" placeholder="Pretraži" onkeyup="search()">
+
+        <div class="divfiltersearch">
+            <div class="dropdown">
+                <button id="dugfilter" role="button"><i class="fa-solid fa-filter" id="filter"></i></button>
+                <div id="myDropdown" class="dropdown-content hide">
+
+                </div>
+            </div>
+
+            <form>
+                <input class="search" type="text" id="search-item" placeholder="Pretraži" onkeyup="search()" />
+            </form>
+        </div>
+
+
         <div class="form-modal">
             <div class="text" id="data">
                 <div class="divdugme">
                     <button type="dodaj" class="dugmeZaDodavanje" onclick="otvoriPopup('novi_kreiram')">
                         <ion-icon name="add"></ion-icon></i>
                     </button>
+
                 </div>
             </div>
         </div>

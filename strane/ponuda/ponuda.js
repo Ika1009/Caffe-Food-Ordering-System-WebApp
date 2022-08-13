@@ -15,36 +15,32 @@ ajax.onreadystatechange = function () {
       let popust = data[i].popust;
       let kolicina = data[i].kolicina;
       let kategorija = data[i].kategorija;
-      cat += "<ul id=kategorijeIspis>";
-      cat += "</ul>";
-      html += '<div title="' + opis + '" class=product>';
-      html += '<input class="id_artikla" data-id="' + id + '" type="hidden">';
+      html += "<div class=card>";
+      html += "<input class=\"id_artikla\" data-id=\"" + id + "\" type=\"hidden\">";
+      html += "<div class=card-bg>";
       html += "<img src=../artikli/artikliSlike/" + id + "." + slika + ">";
-      html += "<div class=imecenakat>";
-      html += "<strong hidden>" + kategorija + "</strong>";
-      html += "<h3>" + ime + "</h3>";
-      if (popust != "0") {
-        html += "<div class=divcena>";
-        html +=
-          "<div class=price>" +
-          (cena * (100 - parseInt(popust))) / 100 +
-          " RSD</div>";
-        html += "<div class=priceprecrtano>" + cena + "RSD</div>";
-        html += "</div>";
-      } else {
-        html += "<div class=price>" + cena + "RSD</div>";
-      }
       html += "</div>";
-      html += "<div class=divdodajukolica>";
-      html += "<ion-icon class=dodajukolica name=add-circle-outline></ion-icon>";
-      html += "<button class=kolicinaukolica>" + kolicina + "</button>";
-      html += "<ion-icon class=oduzmiizkolica name=remove-circle-outline></ion-icon>";
+      html += "<div class=card-context>";
+      html += "<div class=dark-bg></div>";
+      html += "<div class=ime><h2>" + ime + "</h2></div>";
+      if (popust != '0') {
+        html += "<div class=disc>" + popust + "%</div>";
+      }
+
+      if (popust != '0') {
+        html += "<h3 class=price>" + cena * (100 - parseInt(popust)) / 100 + " RSD</h3>";
+        html += "<h3 class=priceprecrtano>" + cena + " RSD</h3>"; // precrtaj
+      } else {
+        html += "<h3 class=price>" + cena + " RSD</h3>";
+      }
+      html += "<p><ion-icon class=dodajukolica name=add-circle-outline></ion-icon> <button class=kolicinaukolica>" + kolicina + "</button>  <ion-icon class=oduzmiizkolica name=remove-circle-outline></ion-icon> </p>";
+      html += "</div>";
+      html += "</div>";
       html += "</div>";
       html += "</div>";
     }
 
     document.getElementById("data").innerHTML += html;
-    document.getElementById("category").innerHTML += cat;
 
     ready();
 
@@ -89,7 +85,7 @@ ajax.onreadystatechange = function () {
     function addCartClicked(element) {
       let button = element.target;
       let shopProduct = button.parentElement.parentElement;
-      let title = shopProduct.getElementsByTagName("h3")[0].innerHTML;
+      let title = shopProduct.getElementsByTagName("h2")[0].innerHTML;
       let price = shopProduct.getElementsByClassName("price")[0].innerHTML;
       let productImg = shopProduct
         .getElementsByTagName("img")[0]
@@ -107,7 +103,7 @@ ajax.onreadystatechange = function () {
     function removeCartClicked(element) {
       let button = element.target;
       let shopProduct = button.parentElement.parentElement;
-      let title = shopProduct.getElementsByTagName("h3")[0].innerHTML;
+      let title = shopProduct.getElementsByTagName("h2")[0].innerHTML;
       let kolicina = parseInt(
         shopProduct.getElementsByClassName("kolicinaukolica")[0].innerHTML
       );
@@ -177,7 +173,7 @@ ajax.onreadystatechange = function () {
       let shopProduct = buttonClicked.parentElement.children[2];
       let title =
         shopProduct.getElementsByClassName("cart-product-title")[0].innerHTML;
-      let naslovi = document.getElementsByTagName("h3");
+      let naslovi = document.getElementsByTagName("h2");
       let kolicine = document.getElementsByClassName("kolicinaukolica");
       for (let i = 0; i < naslovi.length; i++) {
         if (naslovi[i].innerHTML == title) {
@@ -221,23 +217,23 @@ ajax1.onreadystatechange = function () {
   if (this.readyState == 4 && this.status == 200) {
     let data = JSON.parse(this.responseText);
     let html = "";
-    html += "<span class=svi onclick=kategorije(this)>Svi</span>";
+    html += "<a class=kategorisani onclick=kategorije(this)>Svi</a>";
     for (let i = 0; i < data.length; i++) {
       let kategorija = data[i].ime_kategorije;
-      html += "<span class=jednakat onclick=kategorije(this)>" + kategorija + "</span>";
+      html += "<a class=kategorisani onclick=kategorije(this)>" + kategorija + "</a>";
     }
-    document.getElementById("category").innerHTML += html;
+    document.getElementById("myDropdown").innerHTML += html;
   }
 };
 
 const search = () => {
   const searchbox = document.getElementById("search-item").value.toUpperCase();
   const storeitems = document.getElementById("data");
-  const product = document.querySelectorAll(".product");
-  const productname = storeitems.getElementsByTagName("h3");
+  const product = document.querySelectorAll(".card");
+  const productname = storeitems.getElementsByTagName("h2");
 
   for (let i = 0; i < productname.length; i++) {
-    let match = product[i].getElementsByTagName("h3")[0];
+    let match = product[i].getElementsByTagName("h2")[0];
 
     if (match) {
       let textvalue = match.textContent || match.innerHTML;
@@ -251,19 +247,7 @@ const search = () => {
   }
 };
 
-const navToggler = document.querySelector(".nav-toggler");
-navToggler.addEventListener("click", navToggle);
 
-function navToggle() {
-  navToggler.classList.toggle("active");
-  const nav = document.querySelector(".nav");
-  nav.classList.toggle("open");
-  if (nav.classList.contains("open")) {
-    nav.style.maxHeight = nav.scrollHeight + "px";
-  } else {
-    nav.removeAttribute("style");
-  }
-}
 
 const naruci = document.querySelector(".button-27");
 const okbtn = document.querySelector(".ok-btn");
@@ -283,9 +267,19 @@ exit.addEventListener("click", () => {
 
 const kategorije = (element) => {
   const storeitems = document.getElementById("data");
-  const product = document.querySelectorAll(".product");
+  const product = document.querySelectorAll(".card");
   const productname = storeitems.getElementsByTagName("strong");
-
+  const cale = document.getElementsByClassName("kategorisani");
+  for (let i = 0; i < cale.length; i++) {
+      if (cale[i].classList.contains("svi")) {
+          cale[i].classList.remove("svi");
+      } 
+      
+      if (cale[i].innerHTML === element.innerHTML) {
+          cale[i].classList.add("svi");
+      }
+  }
+  
   if (element.innerHTML === 'Svi') {
     for (let i = 0; i < product.length; i++) {
       product[i].style.display = "";
@@ -359,3 +353,15 @@ function setCookie3() {
   let cname = "detalji";
   document.cookie = cname + "=" + result + ";" + expires;
 }
+
+const dugme = document.getElementById("dugfilter");
+const dropdown = document.getElementById("myDropdown");
+dugme.addEventListener("click", () => {
+  if (dropdown.classList.contains('show')) {
+    dropdown.classList.remove("show");
+    dropdown.classList.add("hide");
+  } else {
+    dropdown.classList.remove("hide");
+    dropdown.classList.add("show");
+  }
+});

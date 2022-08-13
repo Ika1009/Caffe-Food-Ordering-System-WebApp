@@ -350,151 +350,149 @@ h2 {
 }
 
 
-a {
-    text-decoration: none;
-}
-
-.container {
-    background-color: #333;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-
-.row {
+header {
     display: flex;
-    flex-wrap: wrap;
-}
-
-.align-items-center {
-    align-items: center;
-}
-
-.justify-content-between {
     justify-content: space-between;
-}
-
-/*header*/
-.header {
-    padding: 12px 0;
-    line-height: normal;
-    background-color: #333;
-    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    padding: 0 14%;
+    background-color: #fff;
+    border-bottom: 3px solid #f2f4f8;
   }
   
-  .header .logo,
-  .header .nav {
-    padding: 0 8%;
-  }
-  
-  .header .nav ul li {
-    display: inline-block;
-    margin-left: 100px;
-  }
-  
-  .header .nav ul li a {
-    display: block;
+  .nav__links a {
     font-size: 22px;
-    line-height: 1;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+    color: #7f8488;
+    text-decoration: none;
     text-transform: capitalize;
-    color: #ebebeb;
-    padding: 10px 0;
-    transition: all 0.5s ease;
   }
-
-.header .nav ul li a.active,
-.header .nav ul li a:hover {
+  
+  .overlay__content a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+    color: #f9f9f9;
+    text-decoration: none;
+  }
+  
+  .cta {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .nav__links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav__links li {
+    padding: 0px 50px;
+  }
+  
+  .nav__links li a {
+    transition: color 0.3s ease 0s;
+  }
+  
+  .nav__links li a:hover {
+    color: #4c4c4c;
+  }
+  
+  .nav__links li a.active {
     color: #ffb266;
-}
-
-.nav-toggler {
-    height: 34px;
-    width: 44px;
-    color: #ffb266;
-    background-color: #ffb266;
-    border-radius: 4px;
-    cursor: pointer;
+  }
+  
+  
+  .cta {
+    padding: 9px 25px;
+    background-color: #FFB266;
     border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease 0s;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  }
+  
+  .cta:hover {
+    background-color: #f69b41;
+  }
+  
+  .logo {
+    cursor: default;
+  }
+  
+  /* Mobile Nav */
+  
+  .menu {
     display: none;
-    margin-right: 15px;
-}
-
-.nav-toggler:focus {
-    outline: none;
-    box-shadow: 0 0 15px black;
-}
-
-.nav-toggler span {
-    height: 2px;
-    width: 20px;
-    background-color: #333;
-    display: block;
-    margin: auto;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.nav-toggler.active span {
-    background-color: transparent;
-}
-
-.nav-toggler span::before,
-.nav-toggler span::after {
-    content: '';
-    position: absolute;
+  }
+  
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%;
+    background-color: #4c4c4c;
+    overflow-x: hidden;
+    transition: width 0.5s ease 0s;
+  }
+  
+  .overlay--active {
+    width: 60%;
+  }
+  
+  .overlay__content {
+    display: flex;
     height: 100%;
-    background-color: #333;
-    transition: all 0.3s ease;
-}
-
-.nav-toggler span::before {
-    transform: translateY(-6px);
-}
-
-.nav-toggler.active span::before {
-    transform: rotate(45deg);
-}
-
-.nav-toggler span::after {
-    transform: translateY(6px);
-}
-
-.nav-toggler.active span::after {
-    transform: rotate(135deg);
-}
-
-@media(max-width:850px) {
-    .text {
-        justify-content: center;
-        align-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .overlay a {
+    padding: 15px;
+    font-size: 36px;
+    display: block;
+    transition: color 0.3s ease 0s;
+  }
+  
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #fff;
+  }
+  
+  .overlay .close {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: #edf0f1;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .overlay a {
+      font-size: 20px;
     }
-
-    .nav-toggler {
-        display: block;
+  
+    .overlay .close {
+      font-size: 40px;
+      top: 15px;
+      right: 35px;
     }
-
-    .header .nav {
-        width: 100%;
-        padding: 0;
-        max-height: 0px;
-        overflow: hidden;
-        visibility: hidden;
-        transition: all 0.5s ease;
+  }
+  
+  @media only screen and (max-width: 800px) {
+  
+    .nav__links,
+    .cta {
+      display: none;
     }
-
-    .header .nav.open {
-        visibility: visible;
+  
+    .menu {
+      display: initial;
     }
-
-    .header .nav ul {
-        padding: 12px 15px 0;
-        margin-top: 12px;
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .header .nav ul li {
-        display: block;
-        margin: 0;
-    }
-}
+  }

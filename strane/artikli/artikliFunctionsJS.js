@@ -56,6 +56,21 @@ function onClickDugmeZaBrisanje(element) {
     elementos.remove()
 
 }
+ajax1.open("GET", "./APIs/kategorijeDobivanje.php", true);
+ajax1.send();
+ajax1.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        let data = JSON.parse(this.responseText);
+        let html = "";
+        html += "<a class=kategorisani onclick=kategorije(this)>Svi</a>";
+        for (let i = 0; i < data.length; i++) {
+            let kategorija = data[i].ime_kategorije;
+            html += "<a class=kategorisani onclick=kategorije(this)>" + kategorija + "</a>";
+        }
+        document.getElementById("myDropdown").innerHTML += html;
+    }
+};
+
 const search = () => {
     const searchbox = document.getElementById("search-item").value.toUpperCase();
     const storeitems = document.getElementById("data");
@@ -76,17 +91,53 @@ const search = () => {
         }
     }
 }
+
+const kategorije = (element) => {
+    const storeitems = document.getElementById("data");
+    const product = document.querySelectorAll(".card");
+    const productname = storeitems.getElementsByTagName("strong");
+    const cale = document.getElementsByClassName("kategorisani");
+    for (let i = 0; i < cale.length; i++) {
+        if (cale[i].classList.contains("svi")) {
+            cale[i].classList.remove("svi");
+        }
+
+        if (cale[i].innerHTML === element.innerHTML) {
+            cale[i].classList.add("svi");
+        }
+    }
+
+    if (element.innerHTML === 'Svi') {
+        for (let i = 0; i < product.length; i++) {
+            product[i].style.display = "";
+        }
+    } else {
+        for (let i = 0; i < productname.length; i++) {
+            let match = product[i].getElementsByTagName("strong")[0];
+            if (match) {
+                let textvalue = match.textContent || match.innerHTML;
+                if (element.innerHTML === textvalue) {
+                    product[i].style.display = "";
+                } else {
+                    product[i].style.display = "none";
+                }
+            }
+        }
+    }
+};
+
+
 const doc = document;
 const menuOpen = doc.querySelector(".menu");
 const menuClose = doc.querySelector(".close");
 const overlay = doc.querySelector(".overlay");
 
 menuOpen.addEventListener("click", () => {
-  overlay.classList.add("overlay--active");
+    overlay.classList.add("overlay--active");
 });
 
 menuClose.addEventListener("click", () => {
-  overlay.classList.remove("overlay--active");
+    overlay.classList.remove("overlay--active");
 });
 
 document.querySelector("#rmv").addEventListener("click", function (event) {
@@ -141,7 +192,7 @@ document.querySelector("#artikl_form").addEventListener("submit", function (even
         if (this.readyState == 4 && this.status == 200) {
             let response = this.responseText;
             if (response == "updatedWithImage") { // ne ulazi ovde uopste ?
-               
+
                 console.log("updatedWithImage");
                 let ajax = new XMLHttpRequest();
                 ajax.open("GET", "./APIs/data.php", true);
@@ -250,4 +301,16 @@ document.querySelector("#artikl_form").addEventListener("submit", function (even
 
         }
     };
+});
+
+const dugme = document.getElementById("dugfilter");
+const dropdown = document.getElementById("myDropdown");
+dugme.addEventListener("click", () => {
+  if (dropdown.classList.contains('show')) {
+    dropdown.classList.remove("show");
+    dropdown.classList.add("hide");
+  } else {
+    dropdown.classList.remove("hide");
+    dropdown.classList.add("show");
+  }
 });

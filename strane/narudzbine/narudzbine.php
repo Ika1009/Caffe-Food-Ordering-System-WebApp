@@ -22,26 +22,26 @@ if (isset($_SESSION['email'])) {
     <body>
 
         </script>
-        <header class="header">
-            <div class="container">
-                <div class="row align-items-center justify-content-between">
-                    <div class="logo">
-                    <img  src="../../slike/hurryup_logo2.jpg" width="auto" height="57px">
-                    </div>
-                    <button type="button" class="nav-toggler">
-                        <span></span>
-                    </button>
-                    <nav class="nav">
-                        <ul>
-                            <li><a class="active" href="../narudzbine/narudzbine.php">Narudzbine</a></li>
-                            <li><a href="../artikli/login.php">Artikli</a></li>
-                            <li><a href="../ponuda/ponuda.php">Ponuda</a></li>
-                            <li><a href="../nalog/profile.php">Moj nalog</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+        <header>
+            <a class="logo"><img src="../../slike/hurryup_logo2-removebg-preview.png" alt="logo" width="auto" height="77px"></a>
+            <nav>
+                <ul class="nav__links">
+                    <li><a class="active" href="/narudzbine.php">Narudzbine</a></li>
+                    <li><a href="../artikli/artikli.php">Artikli</a></li>
+                    <li><a href="../ponuda/ponuda.php">Ponuda</a></li>
+                </ul>
+            </nav>
+            <a class="cta" href="../../login.php">Prijavi se</a>
+            <p class="menu cta">Menu</p>
         </header>
+        <div class="overlay">
+            <a class="close">&times;</a>
+            <div class="overlay__content">
+                <a href="../narudzbine/narudzbine.php">Narudzbine</a>
+                <a class="active" href="artikli.php">Artikli</a>
+                <a href="../ponuda/ponuda.php">Ponuda</a>
+            </div>
+        </div>
 
         <div class="popup-overlay" id="popup-overlay">
             <div class="popup-box-container">
