@@ -55,40 +55,40 @@ if (isset($_SESSION['email'])) {
         <div class="form-modal">
             <img class="restoran" src="../../slike/restoran.jpg">
             <div class="duzina1" onclick="ispisiNarudzbinuStola(this)">1
-                <div class="notifikacija show">!</div>
+                <div class="notifikacija hide">!</div>
             </div>
             <div class="duzina2" onclick="ispisiNarudzbinuStola(this)">2
-                <div class="notifikacija show">!</div>
+                <div class="notifikacija hide">!</div>
             </div>
             <div class="duzina3" onclick="ispisiNarudzbinuStola(this)">3
-                <div class="notifikacija show">!</div>
+                <div class="notifikacija hide">!</div>
             </div>
             <div class="duzina4" onclick="ispisiNarudzbinuStola(this)">4
-                <div class="notifikacija show">!</div>
+                <div class="notifikacija hide">!</div>
             </div>
             <div class="duzina5" onclick="ispisiNarudzbinuStola(this)">5
-                <div class="notifikacija show">!</div>
+                <div class="notifikacija hide">!</div>
             </div>
             <div class="duzina6" onclick="ispisiNarudzbinuStola(this)">6
-                <div class="notifikacija show">!</div>
+                <div class="notifikacija hide">!</div>
             </div>
             <div class="duzina7" onclick="ispisiNarudzbinuStola(this)">7
-                <div class="notifikacija show">!</div>
+                <div class="notifikacija hide">!</div>
             </div>
             <div class="duzina8" onclick="ispisiNarudzbinuStola(this)">8
-                <div class="notifikacija show">!</div>
+                <div class="notifikacija hide">!</div>
             </div>
             <div class="duzina9" onclick="ispisiNarudzbinuStola(this)">9
-                <div class="notifikacija show">!</div>
+                <div class="notifikacija hide">!</div>
             </div>
             <div class="duzina10" onclick="ispisiNarudzbinuStola(this)">10
-                <div class="notifikacija show">!</div>
+                <div class="notifikacija hide">!</div>
             </div>
             <div class="duzina11" onclick="ispisiNarudzbinuStola(this)">11
-                <div class="notifikacija show">!</div>
+                <div class="notifikacija hide">!</div>
             </div>
             <div class="duzina12" onclick="ispisiNarudzbinuStola(this)">12
-                <div class="notifikacija show">!</div>
+                <div class="notifikacija hide">!</div>
             </div>
 
             <div class="popup-box-container">
@@ -125,7 +125,6 @@ if (isset($_SESSION['email'])) {
         const dugme = document.getElementById("stik");
         const dugx = document.getElementById("x");
         const notifikacija = document.getElementsByClassName("notifikacija");
-        console.log(notifikacija);
         dugme.addEventListener("click", () => {
             for (let i = 0; i < notifikacija.length; i++) {
                 notifikacija[i].classList.remove("show");

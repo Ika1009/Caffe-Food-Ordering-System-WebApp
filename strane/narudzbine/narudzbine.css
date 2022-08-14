@@ -580,6 +580,7 @@ header {
 .dropdown {
   float: right;
   position: relative;
+  text-decoration: none;
 }
 
 .dropdown a:hover {
@@ -621,6 +622,8 @@ header {
 }
 
 .dropdown-content a {
+  background-color: #fff;
+  color: #7f8488;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
