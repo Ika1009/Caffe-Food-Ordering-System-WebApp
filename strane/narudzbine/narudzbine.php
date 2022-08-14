@@ -52,10 +52,10 @@ if (isset($_SESSION['email'])) {
         </div>
 
 
-        <div class="form-modal">
+        <div class="form-modal" id="slika">
             <img class="restoran" src="../../slike/restoran.jpg">
             <div class="duzina1" onclick="ispisiNarudzbinuStola(this)">1
-                <div class="notifikacija hide">!</div>
+                <div class="notifikacija hide" id="notifikacija1">!</div>
             </div>
             <div class="duzina2" onclick="ispisiNarudzbinuStola(this)">2
                 <div class="notifikacija hide">!</div>
