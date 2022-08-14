@@ -118,11 +118,9 @@ function navToggle() {
 
 
 
-okbtn = document.getElementById("ok-btn");
-popupbox = document.getElementById("popup-overlay");
+
 
 function otvoriPopup(element) {
-    popupbox.classList.add('aktivanpopup');
     let row_id = element.parentNode.parentNode.getElementsByTagName("input")[0].getAttribute("data-id");
     let ajax = new XMLHttpRequest();
     ajax.open("GET", "./APIs/dataOneRow.php?id=" + row_id, true);
@@ -162,9 +160,7 @@ function otvoriPopup(element) {
         }
 };
 
-okbtn.addEventListener('click', () => {
-    popupbox.classList.remove('aktivanpopup');
-})
+
 
 setTimeout(function() {
     location.reload();

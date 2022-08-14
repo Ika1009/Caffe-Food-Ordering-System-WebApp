@@ -43,14 +43,6 @@ if (isset($_SESSION['email'])) {
             </div>
         </div>
 
-        <div class="popup-overlay" id="popup-overlay">
-            <div class="popup-box-container">
-                <div class="products-container" id="ispis">
-
-                </div>
-                <ion-icon name="close-outline" class="ok-btn" id="ok-btn"></ion-icon><br>
-            </div>
-        </div>
 
         <div class="form-modal">
             <img class="restoran" src="../../slike/restoran.jpg">
@@ -66,8 +58,14 @@ if (isset($_SESSION['email'])) {
             <div class="duzina10">10</div>
             <div class="duzina11">11</div>
             <div class="duzina12">12</div>
+
+            <div class="popup-box-container">
+                <div class="products-container" id="ispis">
+
+                </div>
+            </div>
         </div>
-        
+
         <script src="narudzbine.js"> </script>
 
 

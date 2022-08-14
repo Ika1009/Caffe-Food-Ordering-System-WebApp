@@ -40,67 +40,24 @@
 }
 
 
-.popup-overlay {
-  position: fixed;
-  left: 0;
-  top: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  background-color: rgba(0, 0, 0, 0.25);
-  transition: 0.5s;
-  -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
-  z-index: -3;
-  width: 100vw;
-  height: 100vh;
-  user-select: none;
-  opacity: 0;
-}
 
 .popup-box-container {
-  background-color: #f9f9f9;
-  width: 400px;
-  height: 70vh;
+  background-color: #fff;
+  width: 490px;
+  height: 73vh;
   text-align: center;
   position: absolute;
-  left: 50%;
-  top: 20%;
-  transform: translate(-50%);
-  -webkit-transform: translate(-50%);
-  -moz-transform: translate(-50%);
-  -ms-transform: translate(-50%);
-  -o-transform: translate(-50%);
+  left: 65%;
+  top: 2%;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
-}
-
-.aktivanpopup {
-  opacity: 1;
   z-index: 3;
+  box-shadow: 0 2px 20px 0px rgba(0, 0, 0, 0.35);
 }
 
-.ok-btn {
-
-  border: transparent;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
-  padding: 15px;
-  color: #333;
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 5%;
-  font-size: 20px;
-  cursor: pointer;
-}
 
 
 
@@ -120,7 +77,9 @@
   font-size: 50px;
   text-align: center;
   color: #fff;
+  cursor: pointer;
 }
+
 .duzina2 {
   position: absolute;
   width: 4.2rem;
@@ -131,7 +90,9 @@
   font-size: 50px;
   text-align: center;
   color: #fff;
+  cursor: pointer;
 }
+
 .duzina3 {
   position: absolute;
   width: 4.2rem;
@@ -142,7 +103,9 @@
   font-size: 50px;
   text-align: center;
   color: #fff;
+  cursor: pointer;
 }
+
 .duzina4 {
   position: absolute;
   width: 4.2rem;
@@ -153,7 +116,9 @@
   font-size: 50px;
   text-align: center;
   color: #fff;
+  cursor: pointer;
 }
+
 .duzina5 {
   position: absolute;
   width: 4.2rem;
@@ -164,7 +129,9 @@
   font-size: 50px;
   text-align: center;
   color: #fff;
+  cursor: pointer;
 }
+
 .duzina6 {
   position: absolute;
   width: 4.2rem;
@@ -175,7 +142,9 @@
   font-size: 50px;
   text-align: center;
   color: #fff;
+  cursor: pointer;
 }
+
 .duzina7 {
   position: absolute;
   width: 4.2rem;
@@ -186,7 +155,9 @@
   font-size: 50px;
   text-align: center;
   color: #fff;
+  cursor: pointer;
 }
+
 .duzina8 {
   position: absolute;
   width: 4.2rem;
@@ -197,7 +168,9 @@
   font-size: 50px;
   text-align: center;
   color: #fff;
+  cursor: pointer;
 }
+
 .duzina9 {
   position: absolute;
   width: 4.2rem;
@@ -208,7 +181,9 @@
   font-size: 50px;
   text-align: center;
   color: #fff;
+  cursor: pointer;
 }
+
 .duzina10 {
   position: absolute;
   width: 8.2rem;
@@ -219,7 +194,9 @@
   font-size: 50px;
   text-align: center;
   color: #fff;
+  cursor: pointer;
 }
+
 .duzina11 {
   position: absolute;
   width: 8.2rem;
@@ -230,7 +207,9 @@
   font-size: 50px;
   text-align: center;
   color: #fff;
+  cursor: pointer;
 }
+
 .duzina12 {
   position: absolute;
   width: 8.2rem;
@@ -241,26 +220,20 @@
   font-size: 50px;
   text-align: center;
   color: #fff;
+  cursor: pointer;
 }
 
 .restoran {
   width: auto;
   height: 95%;
   margin: 1%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 
-.form-modal {
-  position: relative;
-  width: 100%;
-  height: 40rem;
-  margin-top: 4em;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 5rem;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  z-index: 2;
-}
 
 .form-modal {
   position: relative;
@@ -273,6 +246,7 @@
   box-shadow: 0 2px 20px 0px rgba(0, 0, 0, 0.35);
   padding: 5px 10px;
   z-index: 2;
+  background-color: #ebebeb;
 }
 
 .form-toggle button {
