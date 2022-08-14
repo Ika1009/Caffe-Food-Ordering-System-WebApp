@@ -216,18 +216,6 @@ const kategorije = (element) => {
 };
 
 
-const doc = document;
-const menuOpen = doc.querySelector(".menu");
-const menuClose = doc.querySelector(".close");
-const overlay = doc.querySelector(".overlay");
-
-menuOpen.addEventListener("click", () => {
-    overlay.classList.add("overlay--active");
-});
-
-menuClose.addEventListener("click", () => {
-    overlay.classList.remove("overlay--active");
-});
 
 document.querySelector("#rmv").addEventListener("click", function (event) {
     var kategorije = document.getElementById("kategorije")
@@ -292,7 +280,7 @@ document.querySelector("#artikl_form").addEventListener("submit", function (even
                         let data = JSON.parse(this.responseText);
                         let html = "";
 
-                        for (let i = document.getElementsByClassName("card").length - 1; i >= 0 ; i--) {
+                        for (let i = document.getElementsByClassName("card").length - 1; i >= 0; i--) {
                             document.getElementById("data").removeChild(document.getElementsByClassName("card")[i]);
                         }
 
@@ -407,7 +395,7 @@ document.querySelector("#artikl_form").addEventListener("submit", function (even
                         let data = JSON.parse(this.responseText);
                         let html = "";
 
-                        for (let i = document.getElementsByClassName("card").length - 1; i >= 0 ; i--) {
+                        for (let i = document.getElementsByClassName("card").length - 1; i >= 0; i--) {
                             document.getElementById("data").removeChild(document.getElementsByClassName("card")[i]);
                         }
 
@@ -460,6 +448,18 @@ document.querySelector("#artikl_form").addEventListener("submit", function (even
 
         }
     };
+});
+
+const dugme1 = document.getElementById("cta");
+const dropdown1 = document.getElementById("myDropdown1");
+dugme1.addEventListener("click", () => {
+    if (dropdown1.classList.contains('show')) {
+        dropdown1.classList.remove("show");
+        dropdown1.classList.add("hide");
+    } else {
+        dropdown1.classList.remove("hide");
+        dropdown1.classList.add("show");
+    }
 });
 
 const dugme = document.getElementById("dugfilter");

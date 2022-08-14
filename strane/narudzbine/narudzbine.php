@@ -14,6 +14,9 @@ if (isset($_SESSION['email'])) {
         <script src="https://kit.fontawesome.com/a572b64406.js" crossorigin="anonymous"></script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/a572b64406.js" crossorigin="anonymous"></script>
         <title>Narudzbine</title>
         <link rel="stylesheet" href="narudzbine.css">
         <link href="../../slike/hurryup_logo2.ico" rel="icon">
@@ -31,8 +34,13 @@ if (isset($_SESSION['email'])) {
                     <li><a href="../ponuda/ponuda.php">Ponuda</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="../../login.php">Prijavi se</a>
-            <p class="menu cta">Menu</p>
+            <div class="dropdown">
+                <button id="cta" class="cta"><i class="fa-solid fa-user"></i></button>
+                <div id="myDropdown" class="dropdown-content hide">
+                    <a href="../nalog/profile.php">Moj Nalog</a>
+                    <a>Statistika</a>
+                </div>
+            </div>
         </header>
         <div class="overlay">
             <a class="close">&times;</a>
@@ -88,8 +96,8 @@ if (isset($_SESSION['email'])) {
 
                 </div>
                 <div class="dugstikx">
-                    <ion-icon id="stik" class=stik name=checkmark-outline ></ion-icon>
-                    <ion-icon id="x" class=x name=remove-circle-outline ></ion-icon>
+                    <ion-icon id="stik" class=stik name=checkmark-outline></ion-icon>
+                    <ion-icon id="x" class=x name=remove-circle-outline></ion-icon>
                 </div>
 
             </div>
@@ -101,21 +109,34 @@ if (isset($_SESSION['email'])) {
 
     </body>
     <script>
+        const dugme1 = document.getElementById("cta");
+        const dropdown = document.getElementById("myDropdown");
+        dugme1.addEventListener("click", () => {
+            if (dropdown.classList.contains('show')) {
+                dropdown.classList.remove("show");
+                dropdown.classList.add("hide");
+            } else {
+                dropdown.classList.remove("hide");
+                dropdown.classList.add("show");
+            }
+        });
+
+
         const dugme = document.getElementById("stik");
         const dugx = document.getElementById("x");
-        const dropdown = document.getElementsByClassName("notifikacija");
-        console.log(dropdown);
+        const notifikacija = document.getElementsByClassName("notifikacija");
+        console.log(notifikacija);
         dugme.addEventListener("click", () => {
-            for (let i = 0; i < dropdown.length; i++) {
-                dropdown[i].classList.remove("show");
-                dropdown[i].classList.add("hide");
+            for (let i = 0; i < notifikacija.length; i++) {
+                notifikacija[i].classList.remove("show");
+                notifikacija[i].classList.add("hide");
             }
 
         });
         dugx.addEventListener("click", () => {
-            for (let i = 0; i < dropdown.length; i++) {
-                dropdown[i].classList.remove("show");
-                dropdown[i].classList.add("hide");
+            for (let i = 0; i < notifikacija.length; i++) {
+                notifikacija[i].classList.remove("show");
+                notifikacija[i].classList.add("hide");
             }
         });
     </script>

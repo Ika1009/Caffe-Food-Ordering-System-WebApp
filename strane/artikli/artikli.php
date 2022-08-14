@@ -33,8 +33,13 @@ if (isset($_SESSION['user_pin'])) {
                     <li><a href="../ponuda/ponuda.php">Ponuda</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="../../login.php">Prijavi se</a>
-            <p class="menu cta">Menu</p>
+            <div class="dropdown1">
+                <button id="cta" class="cta"><i class="fa-solid fa-user"></i></button>
+                <div id="myDropdown1" class="dropdown-content1 hide">
+                    <a href="../nalog/profile.php">Moj Nalog</a>
+                    <a>Statistika</a>
+                </div>
+            </div>
         </header>
         <div class="overlay">
             <a class="close">&times;</a>
