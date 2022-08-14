@@ -33,8 +33,7 @@ if (isset($_SESSION['email'])) {
                     <li><a class="active" href="ponuda.php">Ponuda</a></li>
                 </ul>
             </nav>
-            <a class="cta" href="../../login.php">Prijavi se</a>
-            <p class="menu cta">Menu</p>
+            <a class="cta"  href="../../login.php" style="opacity: 0;">Prijavi se</a>
         </header>
 
         <div class="overlay">
