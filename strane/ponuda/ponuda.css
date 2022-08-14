@@ -73,12 +73,12 @@
 .dropdown a:hover {
     box-shadow: 0 0rem 1rem rgba(0, 0, 0, .05);
     transform: scale(1.05);
-    color: #FFB266;
+    color: #9473f5;
 }
 .svi {
     transform: scale(1.05);
     box-shadow: 0 0rem 1rem rgba(0, 0, 0, .2);
-    color: #FFB266;
+    color: #9473f5;
 }
 
 .hide {
@@ -411,7 +411,7 @@
     top: 0;
     text-align: center;
     font-size: 0.9rem;
-    background: #ffb266;
+    background: #9473f5;
     width: 20%;
     color: #fff;
     border: none;
@@ -525,7 +525,7 @@
 }
 
 .ok-btn {
-    background-color: #FFB266;
+    background-color: #9473f5;
     border: transparent;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -612,13 +612,13 @@ header {
 }
 
 .nav__links li a.active {
-    color: #ffb266;
+    color: #9473f5;
 }
 
 
 .cta {
     padding: 9px 25px;
-    background-color: #FFB266;
+    background-color: #9473f5;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -627,7 +627,7 @@ header {
 }
 
 .cta:hover {
-    background-color: #f69b41;
+    background-color: #8f51a6;
 }
 
 .logo {
@@ -793,7 +793,7 @@ header {
 
 .cart-remove {
     font-size: 24px;
-    color: #ffb266;
+    color: #9473f5;
     cursor: pointer;
 }
 

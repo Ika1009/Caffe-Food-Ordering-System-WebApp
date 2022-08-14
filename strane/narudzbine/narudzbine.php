@@ -26,7 +26,7 @@ if (isset($_SESSION['email'])) {
 
         </script>
         <header>
-            <a class="logo"><img src="../../slike/hurryup_logo2-removebg-preview.png" alt="logo" width="auto" height="77px"></a>
+            <a class="logo"><img src="../../slike/hurryup_logo2-removebg-preview.jpg" alt="logo" width="auto" height="77px"></a>
             <nav>
                 <ul class="nav__links">
                     <li><a class="active" href="/narudzbine.php">Narudzbine</a></li>

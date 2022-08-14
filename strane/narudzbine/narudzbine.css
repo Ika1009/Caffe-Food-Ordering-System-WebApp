@@ -113,7 +113,7 @@
 }
 
 .notifikacija {
-  background-color: #ffb266;
+  background-color: #9473f5;
   width: 1.3rem;
   height: 1.3rem;
   border-radius: 50%;
@@ -312,7 +312,7 @@
 
 #aktivne-toggle {
   background: #333;
-  color: #ffb266;
+  color: #9473f5;
 }
 
 
@@ -446,7 +446,7 @@ h2 {
 
 .table tbody tr:hover td .more,
 .table tbody tr:focus td .more {
-  color: #ffb266;
+  color: #9473f5;
 }
 
 .table .td-box-wrap {
@@ -550,7 +550,7 @@ header {
 }
 
 .nav__links li a.active {
-  color: #ffb266;
+  color: #9473f5;
 }
 
 
@@ -559,17 +559,17 @@ header {
   padding: 9px 25px;
   background-color: #fff;
   border: none !important;
-  color: #ffb266;
+  color: #9473f5;
   cursor: pointer;
   transition: background-color 0.3s ease 0s;
   font-size: 23px;
 }
 
 .cta:hover {
-  color: #ffb266;
+  color: #9473f5;
 }
 .cta:focus {
-  color: #ffb266;
+  color: #9473f5;
 }
 
 .logo {

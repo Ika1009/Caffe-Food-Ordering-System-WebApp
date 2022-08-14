@@ -48,7 +48,7 @@ header {
 }
 
 .nav__links li a.active {
-  color: #ffb266;
+  color: #9473f5;
 }
 
 
@@ -57,17 +57,17 @@ header {
   padding: 9px 25px;
   background-color: #fff;
   border: none !important;
-  color: #ffb266;
+  color: #9473f5;
   cursor: pointer;
   transition: background-color 0.3s ease 0s;
   font-size: 23px;
 }
 
 .cta:hover {
-  color: #ffb266;
+  color: #9473f5;
 }
 .cta:focus {
-  color: #ffb266;
+  color: #9473f5;
 }
 
 .logo {
@@ -205,7 +205,7 @@ header {
 
 .btn-info {
   background-color: #333;
-  color: #ffb266;
+  color: #9473f5;
 }
 
 .col-md-6 {
@@ -317,7 +317,7 @@ header {
 
 .btn-warning {
   color: #fff;
-  background-color: #ffb266;
+  background-color: #9473f5;
   border: none;
   margin-top: 20px;
 }

@@ -12,7 +12,7 @@
     background-color: #333;
     border: none;
     border-radius: 50%;
-    color: #ffb266;
+    color: #9473f5;
     padding: 12px 16px;
     font-size: 14px;
     cursor: pointer;
@@ -73,7 +73,7 @@
     width: 100px;
     height: 37px;
     border: none;
-    color: #ffb266;
+    color: #9473f5;
     background-color: #333;
     border-radius: 13px;
     font-weight: bold;
@@ -154,7 +154,7 @@
     padding: 0 15px 15px;
     width: 500px;
     box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
-    background-color: #FFB266;
+    background-color: #9473f5;
     border-radius: 6px;
     position: absolute;
     top: 0;
@@ -176,7 +176,7 @@
     margin-top: 50px;
     padding: 10px 0;
     background-color: #333;
-    color: #ffb266;
+    color: #9473f5;
     border: 0;
     outline: none;
     font-size: 18px;
@@ -198,11 +198,11 @@
     height: 50px;
     width: 30%;
     border-radius: 15px;
-    border-color: #ffb266;
+    border-color: #9473f5;
     background-color: #333;
     font-size: 22px;
     font-style: italic;
-    color: #FFB266;
+    color: #9473f5;
 }
 
 .dugmeZaDodavanje {
@@ -210,7 +210,7 @@
     width: 100%;
     background-color: #333;
     border-radius: 50%;
-    color: #ffb266;
+    color: #9473f5;
     font-size: 100px;
     border: 0;
     outline: none;
@@ -227,7 +227,7 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    border: solid #ffb266;
+    border: solid #9473f5;
     background: #ebebeb;
     border-radius: 0.5em;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
@@ -258,7 +258,7 @@
     padding: 8px 8px 5px;
     background: #ebebeb;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
-    outline: .2rem solid #ffb266;
+    outline: .2rem solid #9473f5;
     border-radius: 0.5em;
     margin-left: 0;
     height: 375px;
@@ -269,7 +269,7 @@
     float: right;
     border: none;
     border-radius: 50%;
-    color: #ffb266;
+    color: #9473f5;
     background: #333;
     padding: 6px 8px;
     font-size: 20px;
@@ -316,7 +316,7 @@
 
 .cat {
     padding: 0.5rem 0;
-    color: #ffb266;
+    color: #9473f5;
     font-weight: bold;
     font-style: italic;
 }
@@ -330,7 +330,7 @@
     margin-left: 1.5rem;
     padding: .5rem 0;
     font-size: 1.2rem;
-    background: #ffb266;
+    background: #9473f5;
     justify-content: center;
     align-content: center;
     width: 30%;
@@ -412,7 +412,7 @@ a {
 
 .header .logo a {
     font-size: 30px;
-    color: #ffb266;
+    color: #9473f5;
     text-transform: capitalize;
 }
 
@@ -433,14 +433,14 @@ a {
 
 .header .nav ul li a.active,
 .header .nav ul li a:hover {
-    color: #ffb266;
+    color: #9473f5;
 }
 
 .nav-toggler {
     height: 34px;
     width: 44px;
-    color: #ffb266;
-    background-color: #ffb266;
+    color: #9473f5;
+    background-color: #9473f5;
     border-radius: 4px;
     cursor: pointer;
     border: none;

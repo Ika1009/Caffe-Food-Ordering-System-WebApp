@@ -70,13 +70,13 @@
 .dropdown a:hover {
   box-shadow: 0 0rem 1rem rgba(0, 0, 0, .05);
   transform: scale(1.05);
-  color: #FFB266;
+  color: #9473f5;
 }
 
 .svi {
   transform: scale(1.05);
   box-shadow: 0 0rem 1rem rgba(0, 0, 0, .2);
-  color: #FFB266;
+  color: #9473f5;
 }
 .svi {
   transform: scale(1.05);
@@ -260,7 +260,7 @@
   top: 0;
   text-align: center;
   font-size: 0.9rem;
-  background: #ffb266;
+  background: #9473f5;
   width: 20%;
   color: #fff;
   border: none;
@@ -308,7 +308,7 @@
 }
 
 .card .card-icons li:hover {
-  background: #ffb266;
+  background: #9473f5;
   transform: translateX(-5px);
   color: #fff;
 }
@@ -379,7 +379,7 @@
   border: none;
   border-radius: 50%;
   color: #fff;
-  background: #ffb266;
+  background: #9473f5;
   text-align: center;
   padding: 6px 8px;
   font-size: 11px;
@@ -387,7 +387,7 @@
 }
 
 .btn1:hover .btn1 {
-  background: #f69b41;
+  background: #8f51a6;
 }
 
 
@@ -420,7 +420,7 @@
   padding: 3px 7px 5px 7px;
   width: 49%;
   margin-right: 1%;
-  background-color: #FFB266;
+  background-color: #9473f5;
   border-radius: 10px;
   cursor: pointer;
   color: #fff;
@@ -434,7 +434,7 @@
 .ok-btn1 {
   padding: 3px 7px 5px 7px;
   width: 49%;
-  background-color: #FFB266;
+  background-color: #9473f5;
   border-radius: 10px;
   cursor: pointer;
   color: #fff;
@@ -456,7 +456,7 @@
   margin-top: 0.6em;
   margin-bottom: 0.6em;
   margin-right: auto;
-  background-color: #ffb266;
+  background-color: #9473f5;
   border: none;
   border-radius: 50%;
   color: #fff;
@@ -467,7 +467,7 @@
 }
 
 .btn:hover {
-  background-color: #f69b41;
+  background-color: #8f51a6;
 }
 
 .fajl {
@@ -506,7 +506,7 @@
 
 .upload-label>ion-icon {
   margin: 5px auto;
-  color: #FFB266;
+  color: #9473f5;
   font-size: 50px;
 }
 
@@ -521,7 +521,7 @@
   width: 100px;
   height: 37px;
   border: none;
-  background-color: #ffb266;
+  background-color: #9473f5;
   color: #fff;
   border-radius: 13px;
   font-weight: bold;
@@ -632,7 +632,7 @@
   width: 100%;
   margin-top: 2rem;
   padding: 10px 0;
-  background-color: #ffb266;
+  background-color: #9473f5;
   color: #fff;
   border: 0;
   outline: none;
@@ -643,14 +643,14 @@
 }
 
 .submit:hover {
-  background-color: #f69b41;
+  background-color: #8f51a6;
 }
 
 
 
 .dugmeZaDodavanje {
   display: flex;
-  background-color: #ffb266;
+  background-color: #9473f5;
   border-radius: 50%;
   color: #fff;
   font-size: 70px;
@@ -662,7 +662,7 @@
 }
 
 .dugmeZaDodavanje:hover {
-  background-color: #f69b41;
+  background-color: #8f51a6;
 }
 
 .divdugme {
@@ -747,7 +747,7 @@ header {
 }
 
 .nav__links li a.active {
-  color: #ffb266;
+  color: #9473f5;
 }
 
 
@@ -756,17 +756,17 @@ header {
   padding: 9px 25px;
   background-color: #fff;
   border: none !important;
-  color: #ffb266;
+  color: #9473f5;
   cursor: pointer;
   transition: background-color 0.3s ease 0s;
   font-size: 23px;
 }
 
 .cta:hover {
-  color: #ffb266;
+  color: #9473f5;
 }
 .cta:focus {
-  color: #ffb266;
+  color: #9473f5;
 }
 
 .logo {
