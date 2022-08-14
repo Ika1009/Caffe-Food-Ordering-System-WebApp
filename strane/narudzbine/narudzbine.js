@@ -13,6 +13,7 @@ for (let i = 1; i < stolovi.length - 1; i++) {
             console.log(data);
             if(data.length != 0){
                 // ovde kod da se doda css atribut 
+                stolovi[i].children[0].className = "notifikacija";
             }
         }
     }
