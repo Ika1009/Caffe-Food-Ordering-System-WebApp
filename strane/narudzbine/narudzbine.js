@@ -1,4 +1,4 @@
-let ajax = new XMLHttpRequest();
+/*let ajax = new XMLHttpRequest();
 ajax.open("GET", "./APIs/data.php", true);
 ajax.send();
 ajax.onreadystatechange = function () {
@@ -39,7 +39,60 @@ ajax.onreadystatechange = function () {
         }
 
     }
-};
+};*/
+
+function ispisiNarudzbinuStola(element) {
+
+    let broj_stola = element.innerText.match(/(\d+)/)[0];
+    let ajax = new XMLHttpRequest();
+    ajax.open("GET", "./APIs/data.php?broj_stola=" + broj_stola, true);
+    ajax.send();
+    ajax.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let data = JSON.parse(this.responseText);
+            console.log(data);
+            for (let i = 0; i < data.length; i++) {
+                let html = "";
+                let id = data[0].id;
+                let detalji = data[0].detalji;
+                let ukupna_cena = data[i].ukupna_cena;
+                let vreme_narucivanja = data[i].vreme_narucivanja;
+                let broj_stola = data[i].broj_stola;
+                let status = data[i].status;
+                let napomena = data[i].napomena;
+                html += "<div class=wrapper>"
+                html += "<div class=cart-content>";
+                html += "<div class=cart-box>";
+                let artikli_posebno = detalji.split("RSD ")
+
+                for (i = 0; i < artikli_posebno.length; i++) {
+                    console.log(artikli_posebno[i]);
+                    razdvojene = artikli_posebno[i].split("&");
+
+                    for (j = 3; j < razdvojene.length; j = j + 3) {
+                        let ime = razdvojene[j - 2]
+                        let kolicina = razdvojene[j - 1]
+                        let cena = razdvojene[j - 0]
+                        html += "<input hidden type=number min=0 value=1 class=cart-quantity> " + kolicina + " kom</input>";
+                        html += "<div class=cart-product-title>" + ime + "</div>";
+                        html += "<div class=cart-price>" + cena + "</div>";
+                    }
+
+                }
+                html += "</div>";
+                html += "</div>";
+                html += "</div>";
+
+                document.getElementById("ispis").innerHTML = html;
+
+            }
+
+        }
+    };
+
+
+
+}
 
 function addToTable() {
     output.innerHTML += "<tr>" + "<td>" + title.value + "</td>" +
@@ -126,28 +179,28 @@ function otvoriPopup(element) {
             for (i = 0; i < artikli_posebno.length; i++) {
                 console.log(artikli_posebno[i]);
                 razdvojene = artikli_posebno[i].split("&");
-                
+
                 for (j = 3; j < razdvojene.length; j = j + 3) {
-                    let ime = razdvojene[j-2]
-                    let kolicina = razdvojene[j-1]
-                    let cena = razdvojene[j-0]
-                    html += "<input hidden type=number min=0 value=1 class=cart-quantity> "+ kolicina +" kom</input>";
-                    html += "<div class=cart-product-title>" + ime +"</div>";
-                    html += "<div class=cart-price>" + cena +"</div>";
+                    let ime = razdvojene[j - 2]
+                    let kolicina = razdvojene[j - 1]
+                    let cena = razdvojene[j - 0]
+                    html += "<input hidden type=number min=0 value=1 class=cart-quantity> " + kolicina + " kom</input>";
+                    html += "<div class=cart-product-title>" + ime + "</div>";
+                    html += "<div class=cart-price>" + cena + "</div>";
                 }
 
             }
             html += "</div>";
             html += "</div>";
             html += "</div>";
-                
+
             document.getElementById("ispis").innerHTML = html;
-            }
         }
+    }
 };
 
 
 
-setTimeout(function() {
+setTimeout(function () {
     location.reload();
-  }, 60000);
+}, 60000);
