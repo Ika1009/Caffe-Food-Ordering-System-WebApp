@@ -58,6 +58,38 @@
   box-shadow: 0 2px 20px 0px rgba(0, 0, 0, 0.35);
 }
 
+.dugstikx {
+  position: absolute;
+  bottom: 0.3rem;
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.stik {
+  float: left;
+  color: #48b02c;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+
+.x {
+  float: right;
+  color: #d84438;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
 
 
 
@@ -78,6 +110,19 @@
   text-align: center;
   color: #fff;
   cursor: pointer;
+}
+
+.notifikacija {
+  background-color: #ffb266;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  font-size: 20px;
+  position: absolute;
+  right: -0.5rem;
+  top: -0.5rem;
+  z-index: 6;
+  color: #fff;
 }
 
 .duzina2 {
@@ -453,24 +498,6 @@ h2 {
   font-weight: bold;
 }
 
-
-.stik {
-  color: #48b02c;
-  font-size: 30px;
-  margin-left: 1rem;
-  cursor: pointer;
-}
-
-.stik:hover .stik {
-  transform: scale(2);
-}
-
-.x {
-  color: #d84438;
-  font-size: 30px;
-  margin-left: 0.5rem;
-  cursor: pointer;
-}
 
 
 header {

@@ -46,23 +46,52 @@ if (isset($_SESSION['email'])) {
 
         <div class="form-modal">
             <img class="restoran" src="../../slike/restoran.jpg">
-            <div class="duzina1">1</div>
-            <div class="duzina2">2</div>
-            <div class="duzina3">3</div>
-            <div class="duzina4">4</div>
-            <div class="duzina5">5</div>
-            <div class="duzina6">6</div>
-            <div class="duzina7">7</div>
-            <div class="duzina8">8</div>
-            <div class="duzina9">9</div>
-            <div class="duzina10">10</div>
-            <div class="duzina11">11</div>
-            <div class="duzina12">12</div>
+            <div class="duzina1">1
+                <div class="notifikacija show">!</div>
+            </div>
+            <div class="duzina2">2
+                <div class="notifikacija show">!</div>
+            </div>
+            <div class="duzina3">3
+                <div class="notifikacija show">!</div>
+            </div>
+            <div class="duzina4">4
+                <div class="notifikacija show">!</div>
+            </div>
+            <div class="duzina5">5
+                <div class="notifikacija show">!</div>
+            </div>
+            <div class="duzina6">6
+                <div class="notifikacija show">!</div>
+            </div>
+            <div class="duzina7">7
+                <div class="notifikacija show">!</div>
+            </div>
+            <div class="duzina8">8
+                <div class="notifikacija show">!</div>
+            </div>
+            <div class="duzina9">9
+                <div class="notifikacija show">!</div>
+            </div>
+            <div class="duzina10">10
+                <div class="notifikacija show">!</div>
+            </div>
+            <div class="duzina11">11
+                <div class="notifikacija show">!</div>
+            </div>
+            <div class="duzina12">12
+                <div class="notifikacija show">!</div>
+            </div>
 
             <div class="popup-box-container">
                 <div class="products-container" id="ispis">
 
                 </div>
+                <div class="dugstikx">
+                    <ion-icon id="stik" class=stik name=checkmark-outline ></ion-icon>
+                    <ion-icon id="x" class=x name=remove-circle-outline ></ion-icon>
+                </div>
+
             </div>
         </div>
 
@@ -72,41 +101,23 @@ if (isset($_SESSION['email'])) {
 
     </body>
     <script>
-        function toggleIzvrsene() {
-            document.getElementById("aktivne-toggle").style.backgroundColor = "#f9f9f9";
-            document.getElementById("aktivne-toggle").style.color = "#333";
-            document.getElementById("izvrsene-toggle").style.backgroundColor = "#333";
-            document.getElementById("izvrsene-toggle").style.color = "#ffb266";
-            document.getElementById("odbijene-toggle").style.backgroundColor = "#f9f9f9";
-            document.getElementById("odbijene-toggle").style.color = "#333";
-            document.getElementById("divaktivne").style.display = "none";
-            document.getElementById("divizvrsene").style.display = "block";
-            document.getElementById("divodbijene").style.display = "none";
-        }
+        const dugme = document.getElementById("stik");
+        const dugx = document.getElementById("x");
+        const dropdown = document.getElementsByClassName("notifikacija");
+        console.log(dropdown);
+        dugme.addEventListener("click", () => {
+            for (let i = 0; i < dropdown.length; i++) {
+                dropdown[i].classList.remove("show");
+                dropdown[i].classList.add("hide");
+            }
 
-        function toggleAktivne() {
-            document.getElementById("aktivne-toggle").style.backgroundColor = "#333";
-            document.getElementById("aktivne-toggle").style.color = "#ffb266";
-            document.getElementById("izvrsene-toggle").style.backgroundColor = "#f9f9f9";
-            document.getElementById("izvrsene-toggle").style.color = "#333";
-            document.getElementById("odbijene-toggle").style.backgroundColor = "#f9f9f9";
-            document.getElementById("odbijene-toggle").style.color = "#333";
-            document.getElementById("divaktivne").style.display = "block";
-            document.getElementById("divizvrsene").style.display = "none";
-            document.getElementById("divodbijene").style.display = "none";
-        }
-
-        function toggleOdbijene() {
-            document.getElementById("aktivne-toggle").style.backgroundColor = "#f9f9f9";
-            document.getElementById("aktivne-toggle").style.color = "#333";
-            document.getElementById("izvrsene-toggle").style.backgroundColor = "#f9f9f9";
-            document.getElementById("izvrsene-toggle").style.color = "#333";
-            document.getElementById("odbijene-toggle").style.backgroundColor = "#333";
-            document.getElementById("odbijene-toggle").style.color = "#ffb266";
-            document.getElementById("divaktivne").style.display = "none";
-            document.getElementById("divizvrsene").style.display = "none";
-            document.getElementById("divodbijene").style.display = "block";
-        }
+        });
+        dugx.addEventListener("click", () => {
+            for (let i = 0; i < dropdown.length; i++) {
+                dropdown[i].classList.remove("show");
+                dropdown[i].classList.add("hide");
+            }
+        });
     </script>
 
     </html>

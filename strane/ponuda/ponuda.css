@@ -85,6 +85,10 @@
     display: none;
 }
 
+.show {
+    display: block;
+}
+
 .dropdown-content {
     position: absolute;
     left: -100px;
@@ -106,9 +110,6 @@
 }
 
 
-.show {
-    display: block;
-}
 
 
 

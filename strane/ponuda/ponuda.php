@@ -36,6 +36,7 @@ if (isset($_SESSION['email'])) {
             <a class="cta" href="../../login.php">Prijavi se</a>
             <p class="menu cta">Menu</p>
         </header>
+
         <div class="overlay">
             <a class="close">&times;</a>
             <div class="overlay__content">
@@ -44,13 +45,13 @@ if (isset($_SESSION['email'])) {
                 <a href="../ponuda/ponuda.php">Ponuda</a>
             </div>
         </div>
+
         <div class="divfiltersearch">
             <div class="dropdown">
                 <button id="dugfilter" role="button"><i class="fa-solid fa-filter" id="filter"></i></button>
                 <div id="myDropdown" class="dropdown-content hide">
                 </div>
             </div>
-
             <form>
                 <input class="search" type="text" id="search-item" placeholder="Pretraži" onkeyup="search()" />
             </form>
