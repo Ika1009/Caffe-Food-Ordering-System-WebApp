@@ -191,6 +191,7 @@
     position: fixed;
     right: 1rem;
     bottom: 20px;
+    z-index: 10;
 }
 
 .wrapper {
@@ -204,7 +205,7 @@
 
 .button-27 {
     appearance: none;
-    background-color: #333;
+    background-color: #9473f5;
     border: none;
     border-radius: 15px;
     box-sizing: border-box;
@@ -228,6 +229,7 @@
     touch-action: manipulation;
     width: 100%;
     will-change: transform;
+
 }
 
 .button-27:disabled {
@@ -533,7 +535,7 @@
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
     padding: 15px;
-    color: #333;
+    color: #fff;
     position: absolute;
     left: 10px;
     bottom: 10px;

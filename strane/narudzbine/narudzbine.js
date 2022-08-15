@@ -63,7 +63,7 @@ function ispisiNarudzbinuStola(element) {
                     }
 
                 }
-                html += "<button onclick=izvrsiNarudzbinu(this)>Oznaci Narudzbinu kao izvrsenu</button>";
+                html += "<button class=dugizvrsinar onclick=izvrsiNarudzbinu(this)>Izvrsi Narudzbinu</button>";
                 html += "</div>";
                 html += "</div>";
                 html += "</div>";
