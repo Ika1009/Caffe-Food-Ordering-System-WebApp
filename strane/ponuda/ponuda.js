@@ -23,6 +23,7 @@ ajax.onreadystatechange = function () {
       html += "</div>";
       html += "<div class=card-context>";
       html += "<div class=dark-bg></div>";
+      html += "<strong hidden>" + kategorija + "</strong>";
       html += "<div class=ime><h2>" + ime + "</h2></div>";
       if (popust != '0') {
         html += "<div class=disc>" + popust + "%</div>";
