@@ -59,7 +59,7 @@ img {
     width: 100%;
     display: flex;
     text-decoration: none;
-    color: #ffb266;
+    color: #9473f5;
 }
 
 .navigation ul li a .icon {
@@ -184,7 +184,7 @@ img {
 
 .cardBox .card .iconBox {
     font-size: 2.5em;
-    color: #ffb266;
+    color: #9473f5;
 }
 
 .details {
@@ -217,7 +217,7 @@ img {
 .btn {
     position: relative;
     padding: 5px 10px;
-    background: #ffb266;
+    background: #9473f5;
     color: #fff;
     text-decoration: none;
     border-radius: 6px;
@@ -242,7 +242,7 @@ img {
 }
 
 .details .recentOrders table tbody tr:hover {
-    background: #ffb266;
+    background: #9473f5;
     color: #fff;
 }
 
@@ -298,12 +298,12 @@ img {
 
 .details .recentCustomers table tr td h4 span {
     font-size: 14px;
-    color: #ffb266;
+    color: #9473f5;
 }
 
 .details .recentCustomers table tr:hover,
 .details .recentCustomers table tr:hover td h4 span {
-    background: #ffb266;
+    background: #9473f5;
     color: #fff;
 }
 

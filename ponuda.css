@@ -223,7 +223,7 @@
 .disc {
     text-align: center;
     font-size: 0.9rem;
-    background: #ffb266;
+    background: #9473f5;
     width: 25%;
     color: #333;
     border: .1rem solid #333;
@@ -365,7 +365,7 @@
 }
 
 .ok-btn {
-    background-color: #FFB266;
+    background-color: #9473f5;
     border: transparent;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -461,14 +461,14 @@ a {
   }
 
 .header .nav ul li a.active, .header .nav ul li a:hover {
-    color: #ffb266;
+    color: #9473f5;
 }
 
 .nav-toggler {
     height: 34px;
     width: 44px;
-    color: #ffb266;
-    background-color: #ffb266;
+    color: #9473f5;
+    background-color: #9473f5;
     border-radius: 4px;
     cursor: pointer;
     border: none;
@@ -606,7 +606,7 @@ a {
 
 .cart-remove {
     font-size: 24px;
-    color: #ffb266;
+    color: #9473f5;
     cursor: pointer;
 }
 
