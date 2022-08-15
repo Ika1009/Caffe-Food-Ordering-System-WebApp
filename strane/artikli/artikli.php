@@ -11,6 +11,8 @@ if (isset($_SESSION['user_pin'])) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -82,8 +84,11 @@ if (isset($_SESSION['user_pin'])) {
                 <h3 class="naslov"></h3>
                 <div id="signup-form">
                     <form id="artikl_form" class="forma" name="form1" action="" method="post" enctype="multipart/form-data">
+                        <div class="fajl" hidden>
+                            <img id="blah" src="#" alt="your image" />
+                        </div>
                         <div class="fajl">
-                            <input class="file" id="file" type="file" name="file" accept=".png, .jpg, .jpeg">
+                            <input class="file" id="file" type="file" onchange="readURL(this);" name="file" accept=".png, .jpg, .jpeg">
                             <label for="file" class="upload-label">
                                 <div class="image">
                                     <img src="" alt="">
@@ -117,8 +122,8 @@ if (isset($_SESSION['user_pin'])) {
                 </div>
             </div>
         </div>
-        <script src="artikliFunctionsJS.js"></script>
-        <script>
+        <script src="artikliFunctionsJS.js" defer></script>
+        <script defer>
             let popup = document.getElementById("popup-overlay1");
             let poputp = document.getElementById("popup")
 
@@ -160,7 +165,28 @@ if (isset($_SESSION['user_pin'])) {
             })
             btn1.addEventListener('click', () => {
                 popupbox.classList.remove('aktivanpopup');
-            })
+            });
+
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        $('#blah')
+                            .attr('src', e.target.result)
+                            .width(150)
+                            .height(200);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+
+                let sakrij = document.getElementsByClassName('fajl')[1];
+                sakrij.setAttribute("hidden", "hidden");
+
+                let pokazi = document.getElementsByClassName('fajl')[0];
+                pokazi.removeAttribute("hidden");
+            }
         </script>
     </body>
 
