@@ -33,8 +33,19 @@ function ispisiNarudzbinuStola(element) {
     ajax.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let data = JSON.parse(this.responseText);
-            console.log(data);
+
+            if (data.length == 0) {
+                document.getElementById("ispis").innerHTML = "";
+                return;
+            }
+            
             for (let i = 0; i < data.length; i++) {
+
+                if(data[i].status == 'izvrsena'){
+                    document.getElementById("ispis").innerHTML = "";
+                    continue;
+                }
+
                 let html = "";
                 let id = data[0].id;
                 let detalji = data[0].detalji;
@@ -186,7 +197,7 @@ function otvoriPopup(element) {
 
 
 setInterval(function () {
-    
+
     for (let i = 1; i < stolovi.length - 1; i++) {
         let broj_stola = stolovi[i].innerText.match(/(\d+)/)[0];
         let ajax = new XMLHttpRequest();
