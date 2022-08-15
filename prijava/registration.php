@@ -42,7 +42,7 @@
                 <div><input id="confirm_password" type="password" name="confirm_password" class="form-control" autocomplete="off" required placeholder="Potvrdi lozinku" /></div><br>
                 <div><input id="pin" type="password" name="pin" class="form-control" autocomplete="off" required placeholder="Pin" /></div><br>
                 <div><input id="confirm_pin" type="password" name="confirm_pin" class="form-control" autocomplete="off" required placeholder="Potvrdi pin" /></div><br>
-                <button type="submit" name="register" onclick="setCookie()" id="submit-btn" class="btn" style="background-color: #333; color: #9473f5;">Registruj se</button><br><br>
+                <button type="submit" name="register" onclick="setCookie()" id="submit-btn" class="btn" style="background-color: #9473f5; color: #fff;">Registruj se</button><br><br>
                 <p>Već imate nalog? <a style="text-decoration: none; color: #9473f5;" href="login.php">Prijavite se</a></p>
                 <hr />
             </form>

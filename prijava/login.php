@@ -24,7 +24,7 @@
                 <?php } ?>
                 <input type="text" name="ime_firme" id="ime_firme" autocomplete="off" value="<?php if (isset($_GET['ime_firme']))echo(htmlspecialchars($_GET['ime_firme'])) ?>" class="form-control" aria-describedby="emailHelp" placeholder="Ime firme"><br>  
                 <input type="password" name="lozinka" id="lozinka" class="form-control" autocomplete="off" placeholder="Lozinka"></br>      
-                <button type="submit" class="btn" id="submit-btn" style="background-color: #333; color: #9473f5;">Prijavi se</button><br><br>
+                <button type="submit" class="btn" id="submit-btn" style="background-color: #9473f5; color: #fff;">Prijavi se</button><br><br>
                 <p>Nemate nalog? <a style="text-decoration: none; color: #9473f5;" href="registration.php">Registrujte se</a></p>
                 <hr />
             </form>
