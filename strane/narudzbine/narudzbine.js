@@ -54,6 +54,20 @@ function ispisiNarudzbinuStola(element) {
                 let broj_stola = data[i].broj_stola;
                 let status = data[i].status;
                 let napomena = data[i].napomena;
+                html += "<div class=naslov1>"
+                html += "<div> Broj stola: " + broj_stola + "</div>"
+                html += "<div> Vreme narucivanja: " + vreme_narucivanja+ "</div>"
+                html += "</div>"
+                html += "<div class=total>"
+                html += "<div class=total-title>Ukupno</div>"
+                html += "<div class=total-price id=ukupno>" + ukupna_cena + "</div>"
+                html += "</div>"
+                html += "<button class=napomena> napomena</button>"
+                html += "<div class=tabela1>"
+                html += "<div > Kolicina: </div>"
+                html += "<div > Naziv: </div>"
+                html += "<div > Cena: </div>"
+                html += "</div>"
                 html += "<div class=wrapper>"
                 html += "<div class=cart-content>";
                 html += "<div class=cart-box>";
