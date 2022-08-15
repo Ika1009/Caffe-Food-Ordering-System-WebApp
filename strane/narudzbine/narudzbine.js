@@ -182,5 +182,21 @@ function otvoriPopup(element) {
 
 
 setTimeout(function () {
-    location.reload();
+    for (let i = 1; i < stolovi.length - 1; i++) {
+        let broj_stola = stolovi[i].innerText.match(/(\d+)/)[0];
+        console.log(broj_stola)
+        let ajax = new XMLHttpRequest();
+        ajax.open("GET", "./APIs/data.php?broj_stola=" + broj_stola, true);
+        ajax.send();
+        ajax.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let data = JSON.parse(this.responseText);
+                console.log(data);
+                if(data.length != 0){
+                    // ovde kod da se doda css atribut 
+                    stolovi[i].children[0].className = "notifikacija";
+                }
+            }
+        }
+    }
 }, 60000);
