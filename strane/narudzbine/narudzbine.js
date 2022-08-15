@@ -11,19 +11,22 @@ for (let i = 1; i < stolovi.length - 1; i++) {
         if (this.readyState == 4 && this.status == 200) {
             let data = JSON.parse(this.responseText);
             console.log(data);
-            if(data.length != 0){
-                // ovde kod da se doda css atribut 
-                stolovi[i].children[0].className = "notifikacija";
+            if (data.length != 0) {
+                // ovde kod da se doda css atribut
+                if (data[0].status == 'aktivna') {
+                    stolovi[i].children[0].className = "notifikacija";
+                }
             }
         }
     }
 }
 
 
-
+let trenutni_sto_ispisan;
 function ispisiNarudzbinuStola(element) {
 
     let broj_stola = element.innerText.match(/(\d+)/)[0];
+    trenutni_sto_ispisan = broj_stola;
     let ajax = new XMLHttpRequest();
     ajax.open("GET", "./APIs/data.php?broj_stola=" + broj_stola, true);
     ajax.send();
@@ -53,12 +56,14 @@ function ispisiNarudzbinuStola(element) {
                         let ime = razdvojene[j - 2]
                         let kolicina = razdvojene[j - 1]
                         let cena = razdvojene[j - 0]
+                        html += "<input class=\"id_artikla\" data-id=\"" + id + "\" type=\"hidden\">";
                         html += "<input hidden type=number min=0 value=1 class=cart-quantity> " + kolicina + " kom</input>";
                         html += "<div class=cart-product-title>" + ime + "</div>";
                         html += "<div class=cart-price>" + cena + "</div>";
                     }
 
                 }
+                html += "<button onclick=izvrsiNarudzbinu(this)>Oznaci Narudzbinu kao izvrsenu</button>";
                 html += "</div>";
                 html += "</div>";
                 html += "</div>";
@@ -92,16 +97,15 @@ function izvrsiNarudzbinu(element) {
     if (nastavitiProvera == false) {
         return;
     }*/
-
-    row = element.parentNode.parentNode
-    let row_id = element.parentNode.parentNode.getElementsByTagName("input")[0].getAttribute("data-id");
-    // console.log(row_id)
+    ispis = element.parentNode;
+    let id = element.parentNode.parentNode.getElementsByTagName("input")[0].getAttribute("data-id");
     let ajax = new XMLHttpRequest();
-    ajax.open("GET", "./APIs/updateFinished.php?id=" + row_id, true);
+    ajax.open("GET", "./APIs/updateFinished.php?id=" + id, true);
     ajax.send();
     ajax.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            removeRow(element)
+            document.getElementById("ispis").innerHTML = "";
+            document.getElementById("notifikacija" + trenutni_sto_ispisan).className = "hide";
         }
     };
 
@@ -181,22 +185,23 @@ function otvoriPopup(element) {
 
 
 
-setTimeout(function () {
+setInterval(function () {
+    
     for (let i = 1; i < stolovi.length - 1; i++) {
         let broj_stola = stolovi[i].innerText.match(/(\d+)/)[0];
-        console.log(broj_stola)
         let ajax = new XMLHttpRequest();
         ajax.open("GET", "./APIs/data.php?broj_stola=" + broj_stola, true);
         ajax.send();
         ajax.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 let data = JSON.parse(this.responseText);
-                console.log(data);
-                if(data.length != 0){
-                    // ovde kod da se doda css atribut 
-                    stolovi[i].children[0].className = "notifikacija";
+                if (data.length != 0) {
+                    // ovde kod da se doda css atribut
+                    if (data[0].status == 'aktivna') {
+                        stolovi[i].children[0].className = "notifikacija";
+                    }
                 }
             }
         }
     }
-}, 60000);
+}, 10000);

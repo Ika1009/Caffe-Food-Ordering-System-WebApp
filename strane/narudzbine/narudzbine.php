@@ -95,10 +95,7 @@ if (isset($_SESSION['email'])) {
                 <div class="products-container" id="ispis">
 
                 </div>
-                <div class="dugstikx">
-                    <ion-icon id="stik" class=stik name=checkmark-outline></ion-icon>
-                    <ion-icon id="x" class=x name=remove-circle-outline></ion-icon>
-                </div>
+                
 
             </div>
         </div>
