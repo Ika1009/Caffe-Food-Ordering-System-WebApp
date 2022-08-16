@@ -21,13 +21,13 @@ if (isset($_SESSION['email'])) {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/a572b64406.js" crossorigin="anonymous"></script>
         <title>Moj nalog</title>
-        <link href="../../slike/hurryup_logo2.ico" rel="icon">
+        <link href="../../slike/tab-logo.png" rel="icon">
         <link rel="stylesheet" href="profile.css">
     </head>
 
     <body>
     <header>
-            <a class="logo"><img src="../../slike/hurryup_logo2-removebg-preview.jpg" alt="logo" width="auto" height="77px"></a>
+            <a class="logo"><img src="../../slike/lets-order-logo.png" alt="logo" width="auto" height="77px"></a>
             <nav>
                 <ul class="nav__links">
                     <li><a href="../narudzbine/narudzbine.php">Narudzbine</a></li>

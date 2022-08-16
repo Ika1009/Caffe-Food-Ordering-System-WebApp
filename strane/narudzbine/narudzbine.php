@@ -19,14 +19,14 @@ if (isset($_SESSION['email'])) {
         <script src="https://kit.fontawesome.com/a572b64406.js" crossorigin="anonymous"></script>
         <title>Narudzbine</title>
         <link rel="stylesheet" href="narudzbine.css">
-        <link href="../../slike/hurryup_logo2.ico" rel="icon">
+        <link href="../../slike/tab-logo.png" rel="icon">
     </head>
 
     <body>
 
         </script>
         <header>
-            <a class="logo"><img src="../../slike/hurryup_logo2-removebg-preview.jpg" alt="logo" width="auto" height="77px"></a>
+            <a class="logo"><img src="../../slike/lets-order-logo.png" alt="logo" width="auto" height="77px"></a>
             <nav>
                 <ul class="nav__links">
                     <li><a class="active" href="/narudzbine.php">Narudzbine</a></li>

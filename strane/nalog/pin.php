@@ -11,7 +11,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Prijava</title>
-        <link href="../../slike/hurryup_logo2.ico" rel="icon">
+        <link href="../../slike/tab-logo.png" rel="icon">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -29,7 +29,7 @@
                 <i class="bi bi-person-fill" style="font-size: 10rem"></i><br><br>
                 <h1 class="text-center display-4" style="margin-top: -50px; font-size: 2rem;"><?=$_SESSION['ime_firme']?></h1> 
                 <input type="password" name="pin" id="pin" class="form-control" placeholder="Pin"></br>      
-                <button type="submit" class="btn" id="submit-btn" style="background-color: #333; color: #ffb266;">OK</button>
+                <button type="submit" class="btn" id="submit-btn" style="background-color: #9473f5; color: #fff;">OK</button>
             </form>
         </div>
     </body>

@@ -62,6 +62,7 @@
   height: 40px;
   text-align: center;
   cursor: pointer;
+  margin-bottom: 30px;
 }
 
 .total {
@@ -74,6 +75,7 @@
   height: 40px;
   display: flex;
   text-align: end;
+  margin-bottom: 25px;
 }
 
 .total-title {
@@ -200,6 +202,7 @@
   text-align: center;
   color: #fff;
   cursor: pointer;
+  font-family: 'Poppins';
 }
 
 .notifikacija {
@@ -213,6 +216,7 @@
   top: -0.5rem;
   z-index: 6;
   color: #fff;
+  font-family: 'Arial';
 }
 
 .duzina2 {
@@ -226,6 +230,7 @@
   text-align: center;
   color: #fff;
   cursor: pointer;
+  font-family: 'Poppins';
 }
 
 .duzina3 {
@@ -239,6 +244,7 @@
   text-align: center;
   color: #fff;
   cursor: pointer;
+  font-family: 'Poppins';
 }
 
 .duzina4 {
@@ -252,6 +258,7 @@
   text-align: center;
   color: #fff;
   cursor: pointer;
+  font-family: 'Poppins';
 }
 
 .duzina5 {
@@ -265,6 +272,7 @@
   text-align: center;
   color: #fff;
   cursor: pointer;
+  font-family: 'Poppins';
 }
 
 .duzina6 {
@@ -278,6 +286,7 @@
   text-align: center;
   color: #fff;
   cursor: pointer;
+  font-family: 'Poppins';
 }
 
 .duzina7 {
@@ -291,6 +300,7 @@
   text-align: center;
   color: #fff;
   cursor: pointer;
+  font-family: 'Poppins';
 }
 
 .duzina8 {
@@ -304,6 +314,7 @@
   text-align: center;
   color: #fff;
   cursor: pointer;
+  font-family: 'Poppins';
 }
 
 .duzina9 {
@@ -317,6 +328,7 @@
   text-align: center;
   color: #fff;
   cursor: pointer;
+  font-family: 'Poppins';
 }
 
 .duzina10 {
@@ -330,6 +342,7 @@
   text-align: center;
   color: #fff;
   cursor: pointer;
+  font-family: 'Poppins';
 }
 
 .duzina11 {
@@ -343,6 +356,7 @@
   text-align: center;
   color: #fff;
   cursor: pointer;
+  font-family: 'Poppins';
 }
 
 .duzina12 {
@@ -356,6 +370,7 @@
   text-align: center;
   color: #fff;
   cursor: pointer;
+  font-family: 'Poppins';
 }
 
 .restoran {
