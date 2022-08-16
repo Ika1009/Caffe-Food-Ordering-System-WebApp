@@ -225,6 +225,9 @@ setInterval(function () {
                     if (data[0].status == 'aktivna') {
                         stolovi[i].children[0].className = "notifikacija";
                     }
+                    if (data[0].status == 'izvrsena') {
+                        stolovi[i].children[0].className = "hide";
+                    }
                 }
             }
         }
