@@ -1,6 +1,8 @@
 const url = new URL(window.location.href);
 let ime_firme = url.searchParams.get("ime_firme");
 
+// alo ovde je nikoleta indijanac
+
 let ajax = new XMLHttpRequest();
 ajax.open("GET", "./API/data.php?ime_firme=" + ime_firme, true);
 ajax.send();
