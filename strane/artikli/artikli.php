@@ -30,9 +30,9 @@ if (isset($_SESSION['user_pin'])) {
             <a class="logo"><img src="../../slike/lets-order-logo.png" alt="logo" width="auto" height="77px"></a>
             <nav>
                 <ul class="nav__links">
-                    <li><a href="../narudzbine/narudzbine.php">Narudzbine</a></li>
-                    <li><a class="active" href="artikli.php">Artikli</a></li>
-                    <li><a href="../ponuda/ponuda.php">Ponuda</a></li>
+                    <li><a href="../narudzbine/narudzbine.php">Orders</a></li>
+                    <li><a class="active" href="artikli.php">Products</a></li>
+                    <li><a href="../ponuda/ponuda.php">Menu</a></li>
                 </ul>
             </nav>
             <div class="dropdown1">
@@ -61,7 +61,7 @@ if (isset($_SESSION['user_pin'])) {
             </div>
 
             <form>
-                <input class="search" type="text" id="search-item" placeholder="Pretraži" onkeyup="search()" />
+                <input class="search" type="text" id="search-item" placeholder="Search" onkeyup="search()" />
             </form>
         </div>
 

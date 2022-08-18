@@ -29,9 +29,9 @@ if (isset($_SESSION['email'])) {
             <a class="logo"><img src="../../slike/lets-order-logo.png" alt="logo" width="auto" height="77px"></a>
             <nav>
                 <ul class="nav__links">
-                    <li><a class="active" href="/narudzbine.php">Narudzbine</a></li>
-                    <li><a href="../artikli/artikli.php">Artikli</a></li>
-                    <li><a href="../ponuda/ponuda.php">Ponuda</a></li>
+                    <li><a class="active" href="/narudzbine.php">Orders</a></li>
+                    <li><a href="../artikli/artikli.php">Products</a></li>
+                    <li><a href="../ponuda/ponuda.php">Menu</a></li>
                 </ul>
             </nav>
             <div class="dropdown">

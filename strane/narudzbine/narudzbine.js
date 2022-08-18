@@ -55,23 +55,23 @@ function ispisiNarudzbinuStola(element) {
                 let status = data[i].status;
                 let napomena = data[i].napomena;
                 html += "<div class=naslov1>"
-                html += "<div> Broj stola: " + broj_stola + "</div>"
-                html += "<div> Vreme narucivanja: " + vreme_narucivanja+ "</div>"
+                html += "<div> Table: " + broj_stola + "</div>"
+                html += "<div> Time of order: " + vreme_narucivanja+ "</div>"
                 html += "</div>"
                 html += "<div class=total>"
-                html += "<div class=total-title>Ukupno</div>"
+                html += "<div class=total-title>Total</div>"
                 html += "<div class=total-price id=ukupno>" + ukupna_cena + "</div>"
                 html += "</div>"
-                html += "<button class=napomena> napomena</button>"
+                html += "<button class=napomena> note </button>"
                 html += "<div class=tabela1>"
-                html += "<div > Kolicina: </div>"
-                html += "<div > Naziv: </div>"
-                html += "<div > Cena: </div>"
+                html += "<div > Amount: </div>"
+                html += "<div > Name: </div>"
+                html += "<div > Price: </div>"
                 html += "</div>"
                 html += "<div class=wrapper>"
                 html += "<div class=cart-content>";
                 html += "<div class=cart-box>";
-                let artikli_posebno = detalji.split("RSD ")
+                let artikli_posebno = detalji.split(" RSD ")
 
                 for (i = 0; i < artikli_posebno.length; i++) {
                     console.log(artikli_posebno[i]);
@@ -82,13 +82,13 @@ function ispisiNarudzbinuStola(element) {
                         let kolicina = razdvojene[j - 1]
                         let cena = razdvojene[j - 0]
                         html += "<input class=\"id_artikla\" data-id=\"" + id + "\" type=\"hidden\">";
-                        html += "<input hidden type=number min=0 value=1 class=cart-quantity> " + kolicina + " kom</input>";
+                        html += "<input hidden type=number min=0 value=1 class=cart-quantity> " + kolicina + "</input>";
                         html += "<div class=cart-product-title>" + ime + "</div>";
                         html += "<div class=cart-price>" + cena + "</div>";
                     }
 
                 }
-                html += "<button class=dugizvrsinar onclick=izvrsiNarudzbinu(this)>Izvrsi Narudzbinu</button>";
+                html += "<button class=dugizvrsinar onclick=izvrsiNarudzbinu(this)>Complete an order</button>";
                 html += "</div>";
                 html += "</div>";
                 html += "</div>";
