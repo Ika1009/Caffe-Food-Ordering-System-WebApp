@@ -58,37 +58,37 @@ if (isset($_SESSION['email'])) {
                 <div class="notifikacija hide" id="notifikacija1">!</div>
             </div>
             <div class="duzina2" onclick="ispisiNarudzbinuStola(this)">2
-                <div class="notifikacija hide">!</div>
+                <div class="notifikacija hide" id="notifikacija2">!</div>
             </div>
             <div class="duzina3" onclick="ispisiNarudzbinuStola(this)">3
-                <div class="notifikacija hide">!</div>
+                <div class="notifikacija hide" id="notifikacija3">!</div>
             </div>
             <div class="duzina4" onclick="ispisiNarudzbinuStola(this)">4
-                <div class="notifikacija hide">!</div>
+                <div class="notifikacija hide" id="notifikacija4">!</div>
             </div>
             <div class="duzina5" onclick="ispisiNarudzbinuStola(this)">5
-                <div class="notifikacija hide">!</div>
+                <div class="notifikacija hide" id="notifikacija5">!</div>
             </div>
             <div class="duzina6" onclick="ispisiNarudzbinuStola(this)">6
-                <div class="notifikacija hide">!</div>
+                <div class="notifikacija hide" id="notifikacija6">!</div>
             </div>
             <div class="duzina7" onclick="ispisiNarudzbinuStola(this)">7
-                <div class="notifikacija hide">!</div>
+                <div class="notifikacija hide" id="notifikacija7">!</div>
             </div>
             <div class="duzina8" onclick="ispisiNarudzbinuStola(this)">8
-                <div class="notifikacija hide">!</div>
+                <div class="notifikacija hide" id="notifikacija8">!</div>
             </div>
             <div class="duzina9" onclick="ispisiNarudzbinuStola(this)">9
-                <div class="notifikacija hide">!</div>
+                <div class="notifikacija hide" id="notifikacija9">!</div>
             </div>
             <div class="duzina10" onclick="ispisiNarudzbinuStola(this)">10
-                <div class="notifikacija hide">!</div>
+                <div class="notifikacija hide" id="notifikacija10">!</div>
             </div>
             <div class="duzina11" onclick="ispisiNarudzbinuStola(this)">11
-                <div class="notifikacija hide">!</div>
+                <div class="notifikacija hide" id="notifikacija11">!</div>
             </div>
             <div class="duzina12" onclick="ispisiNarudzbinuStola(this)">12
-                <div class="notifikacija hide">!</div>
+                <div class="notifikacija hide" id="notifikacija12">!</div>
             </div>
 
             <div class="popup-box-container">

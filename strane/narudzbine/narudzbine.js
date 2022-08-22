@@ -133,11 +133,6 @@ function izvrsiNarudzbinu(element) {
             document.getElementById("notifikacija" + trenutni_sto_ispisan).className = "hide";
         }
     };
-
-    let tabelaUbaci = document.getElementById("izvrsene")
-    row.removeChild(row.children[6])
-    tabelaUbaci.appendChild(row)
-
 }
 
 function odbijNarudzbinu(element) {

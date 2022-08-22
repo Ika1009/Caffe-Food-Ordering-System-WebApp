@@ -316,9 +316,9 @@ document.querySelector("#dodajopciju").addEventListener("click", function (event
 });
 var add_artikl_pom = 0;
 
-document.querySelector("#popupDugme").addEventListener("submit", function (event) {
+document.querySelector("#artikl_form").addEventListener("submit", function (event) {
     event.preventDefault();
-    // console.log("alo");
+    console.log("aloalo zove vienna");
 
     var artikl_form = document.getElementById("artikl_form");
 
