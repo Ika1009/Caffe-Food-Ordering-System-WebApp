@@ -54,7 +54,7 @@ ajax.onreadystatechange = function () {
 };
 
 
-
+let elementosKategorije = document.getElementById("kategorije")
 let ajax1 = new XMLHttpRequest();
 ajax1.open("GET", "./APIs/kategorijeDobivanje.php", true);
 ajax1.send();
@@ -66,30 +66,29 @@ ajax1.onreadystatechange = function () {
         for (let i = 0; i < data.length; i++) {
             let kategorija = data[i].ime_kategorije;
             html += "<a class=kategorisani onclick=kategorije(this)>" + kategorija + "</a>";
+            var option = document.createElement("option");
+            option.text = kategorija;
+            elementosKategorije.add(option);
         }
         document.getElementById("myDropdown").innerHTML += html;
     }
 };
 
 
-let elementosKategorije = document.getElementById("kategorije")
-let ajaxKategorije = new XMLHttpRequest();
+
+/*let ajaxKategorije = new XMLHttpRequest();
 ajaxKategorije.open("GET", "./APIs/kategorijeDobivanje.php", true);
 ajaxKategorije.send();
 ajaxKategorije.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
         let data = JSON.parse(this.responseText);
-        console.log(data);
         let html = "";
         for (let i = 0; i < data.length; i++) {
             let kategorija = data[i].ime_kategorije;
-            console.log(kategorija);
-            var option = document.createElement("option");
-            option.text = kategorija;
-            elementosKategorije.add(option);
+
         }
     }
-};
+};*/
 
 // Funkcije
 
@@ -184,7 +183,6 @@ function dugmeZaMenjanje(element) {
     otvoriPopup();
 
 
-    console.log("kliknuto dugme");
 }
 // za brisanje
 function onClickDugmeZaBrisanje(element) {
@@ -215,7 +213,6 @@ function onClickDugmeZaBrisanje(element) {
     //setCookie(elementos.textContent);
     //console.log(elementos.textContent);
 
-    console.log("kliknuto dugme");
     elementos.remove()
 
 }
@@ -318,7 +315,6 @@ var add_artikl_pom = 0;
 
 document.querySelector("#artikl_form").addEventListener("submit", function (event) {
     event.preventDefault();
-    console.log("aloalo zove vienna");
 
     var artikl_form = document.getElementById("artikl_form");
 
@@ -330,7 +326,6 @@ document.querySelector("#artikl_form").addEventListener("submit", function (even
     ajax.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let response = this.responseText;
-            console.log(response);
             ispisArtikala();
         }
     };
