@@ -273,19 +273,32 @@ const kategorije = (element) => {
   const product = document.querySelectorAll(".card");
   const productname = storeitems.getElementsByTagName("strong");
   const cale = document.getElementsByClassName("kategorisani");
+  const dropdown2 = document.getElementById("myDropdown");
+  const prazne = document.getElementsByClassName('divkategorija');
+
   for (let i = 0; i < cale.length; i++) {
     if (cale[i].classList.contains("svi")) {
       cale[i].classList.remove("svi");
+      dropdown2.classList.remove("show");
+      dropdown2.classList.add("hide");
     }
 
     if (cale[i].innerHTML === element.innerHTML) {
       cale[i].classList.add("svi");
+      dropdown2.classList.remove("show");
+      dropdown2.classList.add("hide");
     }
   }
 
   if (element.innerHTML === 'Svi') {
     for (let i = 0; i < product.length; i++) {
       product[i].style.display = "";
+    }
+
+    for (let i = 0; i < prazne.length; i++) {
+      if (prazne[i].childNodes.length > 2) {
+        prazne[i].style.display = "";
+      }
     }
   } else {
     for (let i = 0; i < productname.length; i++) {
@@ -296,6 +309,18 @@ const kategorije = (element) => {
           product[i].style.display = "";
         } else {
           product[i].style.display = "none";
+        }
+      }
+    }
+
+    for (let i = 0; i < prazne.length; i++) {
+      let match = prazne[i].getElementsByClassName("imekategorija")[0];
+      if (match) {
+        let textvalue = match.textContent || match.innerHTML;
+        if (element.innerHTML === textvalue) {
+          prazne[i].style.display = "";
+        } else {
+          prazne[i].style.display = "none";
         }
       }
     }
