@@ -227,4 +227,4 @@ setInterval(function () {
             }
         }
     }
-}, 10000);
+}, 5000);

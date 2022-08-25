@@ -74,22 +74,6 @@ ajax1.onreadystatechange = function () {
     }
 };
 
-
-
-/*let ajaxKategorije = new XMLHttpRequest();
-ajaxKategorije.open("GET", "./APIs/kategorijeDobivanje.php", true);
-ajaxKategorije.send();
-ajaxKategorije.onreadystatechange = function () {
-    if (this.readyState == 4 && this.status == 200) {
-        let data = JSON.parse(this.responseText);
-        let html = "";
-        for (let i = 0; i < data.length; i++) {
-            let kategorija = data[i].ime_kategorije;
-
-        }
-    }
-};*/
-
 // Funkcije
 
 function ispisArtikala() {
@@ -105,7 +89,6 @@ function ispisArtikala() {
                 document.getElementById("data").removeChild(document.getElementsByClassName("card")[i]);
             }
 
-            document.getElementsByClassName("card");
             for (let i = 0; i < data.length; i++) {
                 let id = data[i].id;
                 let ime = data[i].ime;
