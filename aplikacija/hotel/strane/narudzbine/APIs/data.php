@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-include_once("../../../db.php");
+include_once "../../../../../db.php";
 
 $ime_firme = $_SESSION['ime_firme'];
 $broj_stola = $_REQUEST['broj_stola'];

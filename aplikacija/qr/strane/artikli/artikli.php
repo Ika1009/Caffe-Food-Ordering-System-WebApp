@@ -27,7 +27,7 @@ if (isset($_SESSION['user_pin'])) {
 
     <body>
         <header>
-            <a class="logo"><img src="../../slike/lets-order-logo.png" alt="logo" width="auto" height="77px"></a>
+            <a class="logo"><img src="../../../../slike/lets-order-logo.png" alt="logo" width="auto" height="77px"></a>
             <nav>
                 <ul class="nav__links">
                     <li><a href="../narudzbine/narudzbine.php">Orders</a></li>

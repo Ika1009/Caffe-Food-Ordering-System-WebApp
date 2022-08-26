@@ -2,7 +2,7 @@
 <?php
 if (isset($_REQUEST['addNewCategory'])) {
 
-    include_once("../../../db.php");
+    include_once("../../../../../db.php");
     session_start();
     $imeKategorije = $_REQUEST['addNewCategory'];
 

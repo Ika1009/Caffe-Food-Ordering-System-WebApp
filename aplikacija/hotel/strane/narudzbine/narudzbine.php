@@ -26,7 +26,7 @@ if (isset($_SESSION['email'])) {
 
         </script>
         <header>
-            <a class="logo"><img src="../../slike/lets-order-logo.png" alt="logo" width="auto" height="77px"></a>
+            <a class="logo"><img src="../../../../slike/lets-order-logo.png" alt="logo" width="auto" height="77px"></a>
             <nav>
                 <ul class="nav__links">
                     <li><a class="active" href="/narudzbine.php">Orders</a></li>
@@ -53,7 +53,7 @@ if (isset($_SESSION['email'])) {
 
 
         <div class="form-modal" id="slika">
-            <img class="restoran" src="../../slike/restoran.jpg">
+            <img class="restoran" src="../../../../slike/restoran.jpg">
             <div class="duzina1" onclick="ispisiNarudzbinuStola(this)">1
                 <div class="notifikacija hide" id="notifikacija1">!</div>
             </div>

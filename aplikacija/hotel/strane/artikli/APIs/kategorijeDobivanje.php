@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../../../db.php");
+include_once("../../../../../db.php");
 $ime_firme = $_SESSION['ime_firme'];
 $result = mysqli_query($conn, "SELECT * FROM `kategorije` WHERE ime_firme='$ime_firme'");
 $data = array();

@@ -28,7 +28,7 @@ if($slikaVelicina == 0) {
     $slikaDobra = true;
 }
 
-include_once "../../../db.php";
+include_once "../../../../../db.php";
 $ime_firme = $_SESSION['ime_firme'];
 if ($_REQUEST['id'] && strlen($_REQUEST['id']) > 0) { // proverava dal updajtuje ili pravi novi
     // UPDATE `artikli` SET `ime`="Coca Cola",`cena`="108",`opis`="U limenci",`popust`="10",`kategorija`="burger" WHERE `id`= 102

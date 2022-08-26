@@ -1,6 +1,6 @@
 <?php
 session_start();
-include('../../db.php');
+include_once "../../../../db.php";
 
 if(isset($_POST['update'])){
     $userNewIme = $_POST['userIme'];

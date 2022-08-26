@@ -4,38 +4,44 @@ session_start();
 if (isset($_SESSION['email'])) {
 ?>
     <!DOCTYPE html>
-    <html lang="en">
+    <html>
 
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="stylesheet" href="ponuda.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/a572b64406.js" crossorigin="anonymous"></script>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/a572b64406.js" crossorigin="anonymous"></script>
-        <script src="ponuda.js" defer></script>
-        <title>Ponuda</title>
+        <title>Narudzbine</title>
+        <link rel="stylesheet" href="narudzbine.css">
         <link href="../../slike/tab-logo.png" rel="icon">
     </head>
 
     <body>
+
+        </script>
         <header>
             <a class="logo"><img src="../../slike/lets-order-logo.png" alt="logo" width="auto" height="77px"></a>
             <nav>
                 <ul class="nav__links">
-                    <li><a href="../narudzbine/narudzbine.php">Orders</a></li>
+                    <li><a class="active" href="/narudzbine.php">Orders</a></li>
                     <li><a href="../artikli/artikli.php">Products</a></li>
-                    <li><a class="active" href="ponuda.php">Menu</a></li>
+                    <li><a href="../ponuda/ponuda.php">Menu</a></li>
                 </ul>
             </nav>
-            <a class="cta"  href="../../login.php" style="opacity: 0;">Prijavi se</a>
+            <div class="dropdown">
+                <button id="cta" class="cta"><i class="fa-solid fa-user"></i></button>
+                <div id="myDropdown" class="dropdown-content hide">
+                    <a href="../nalog/profile.php">Moj Nalog</a>
+                    <a>Statistika</a>
+                </div>
+            </div>
         </header>
-
         <div class="overlay">
             <a class="close">&times;</a>
             <div class="overlay__content">
@@ -45,60 +51,141 @@ if (isset($_SESSION['email'])) {
             </div>
         </div>
 
-        <div class="divfiltersearch">
-            <div class="dropdown">
-                <button id="dugfilter" role="button"><i class="fa-solid fa-filter" id="filter"></i></button>
-                <div id="myDropdown" class="dropdown-content hide">
-                </div>
-            </div>
-            <form>
-                <input class="search" type="text" id="search-item" placeholder="Pretraži" onkeyup="search()" />
-            </form>
-        </div>
 
+        
         <div class="form-modal">
-            <div class="text" id="data">
-                <!-- nalaze se ovde produkti -->
+
+            <div class="form-toggle">
+                <button id="aktivne-toggle" onclick="toggleAktivne()">Aktivne</button>
+                <button id="izvrsene-toggle" onclick="toggleIzvrsene()">Izvršene</button>
+                <button id="odbijene-toggle" onclick="toggleOdbijene()"> Odbijene</button>
             </div>
-        </div>
+            <div id="divaktivne" class="divaktivne">
+                <div class="content">
+
+                    <div class="container">
+
+                        <div class="table-responsive" id="tabela-aktivne">
 
 
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Broj Stola</th>
+                                        <th scope="col">Ukupna Cena</th>
+                                        <th scope="col">Vreme narudžbine</th>
+                                        <th scope="col">Napomena</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
 
+                                <tbody id="aktivne">
 
-        <div class="divdugmenaruci" id="sakrij" hidden>
-            <button class="button-27" role="button">Naruči za <span>0</span></button>
-        </div>
-        <div class="popup-overlay">
-            <div class="popup-box-container">
-                <div class="cart">
-                    <ion-icon name="close-outline" class="exit"></ion-icon><br>
-                    <h2 class="cart-title">Rezime narudžbine</h2>
-
-                    <div class="wrapper">
-                        <div class="cart-content">
-                            <div class="cart-box">
-                                <img hidden class="cart-img">
-                                <div class="detail-box">
-                                    <div hidden class="cart-product-title"></div>
-                                    <div hidden class="cart-price">0</div>
-                                    <input hidden type="number" min="0" value="1" class="cart-quantity" font-family="Roobert, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol">
-                                </div>
-                            </div>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div id="divizvrsene" class="divizvrsene">
+                <div class="content">
 
-                    <div class="total">
-                        <div class="total-title">Ukupno</div>
-                        <div class="total-price" id="ukupno">0 RSD</div>
+                    <div class="container">
+
+
+                        <div class="table-responsive">
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Broj Stola</th>
+                                        <th scope="col">Ukupna Cena</th>
+                                        <th scope="col">Vreme narudžbine</th>
+                                        <th scope="col">Napomena</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+
+                                <tbody id="izvrsene">
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
-                <form action="narudzbina.php" method="post">
-                    <button type="submit" name="order" onclick="setCookie()" class="ok-btn">Potrvdi narudzbinu</button>
-                </form>
+            </div>
+            <div id="divodbijene" class="divodbijene">
+
+                <div class="content">
+
+                    <div class="container">
+
+
+                        <div class="table-responsive">
+
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Broj Stola</th>
+                                        <th scope="col">Ukupna Cena</th>
+                                        <th scope="col">Vreme narudžbine</th>
+                                        <th scope="col">Napomena</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody id="odbijene">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        </div>
+        <script src="narudzbine.js"> </script>
+
+
+
     </body>
+    <script>
+        function toggleIzvrsene() {
+            document.getElementById("aktivne-toggle").style.backgroundColor = "#f9f9f9";
+            document.getElementById("aktivne-toggle").style.color = "#333";
+            document.getElementById("izvrsene-toggle").style.backgroundColor = "#333";
+            document.getElementById("izvrsene-toggle").style.color = "#ffb266";
+            document.getElementById("odbijene-toggle").style.backgroundColor = "#f9f9f9";
+            document.getElementById("odbijene-toggle").style.color = "#333";
+            document.getElementById("divaktivne").style.display = "none";
+            document.getElementById("divizvrsene").style.display = "block";
+            document.getElementById("divodbijene").style.display = "none";
+        }
+
+        function toggleAktivne() {
+            document.getElementById("aktivne-toggle").style.backgroundColor = "#333";
+            document.getElementById("aktivne-toggle").style.color = "#ffb266";
+            document.getElementById("izvrsene-toggle").style.backgroundColor = "#f9f9f9";
+            document.getElementById("izvrsene-toggle").style.color = "#333";
+            document.getElementById("odbijene-toggle").style.backgroundColor = "#f9f9f9";
+            document.getElementById("odbijene-toggle").style.color = "#333";
+            document.getElementById("divaktivne").style.display = "block";
+            document.getElementById("divizvrsene").style.display = "none";
+            document.getElementById("divodbijene").style.display = "none";
+        }
+
+        function toggleOdbijene() {
+            document.getElementById("aktivne-toggle").style.backgroundColor = "#f9f9f9";
+            document.getElementById("aktivne-toggle").style.color = "#333";
+            document.getElementById("izvrsene-toggle").style.backgroundColor = "#f9f9f9";
+            document.getElementById("izvrsene-toggle").style.color = "#333";
+            document.getElementById("odbijene-toggle").style.backgroundColor = "#333";
+            document.getElementById("odbijene-toggle").style.color = "#ffb266";
+            document.getElementById("divaktivne").style.display = "none";
+            document.getElementById("divizvrsene").style.display = "none";
+            document.getElementById("divodbijene").style.display = "block";
+        }
+    </script>
+
+    </html>
 
     </html>
 <?php

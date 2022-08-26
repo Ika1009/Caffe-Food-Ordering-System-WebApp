@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../../../db.php");
+include_once("../../../../../db.php");
 $obrisiKategoriju = $_REQUEST['obrisiKategoriju'];
 $ime_firme = $_SESSION['ime_firme'];
 $sql = "DELETE FROM kategorije WHERE ime_kategorije = '$obrisiKategoriju' AND ime_firme='$ime_firme'"; //kako sad ja da dobijem bas artikl koji se brise - evo kako ilija smrdljo

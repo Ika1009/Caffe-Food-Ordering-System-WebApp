@@ -26,7 +26,7 @@ if (isset($_SESSION['email'])) {
 
         </script>
         <header>
-            <a class="logo"><img src="../../slike/lets-order-logo.png" alt="logo" width="auto" height="77px"></a>
+            <a class="logo"><img src="../../../../slike/lets-order-logo.png" alt="logo" width="auto" height="77px"></a>
             <nav>
                 <ul class="nav__links">
                     <li><a class="active" href="/narudzbine.php">Orders</a></li>
@@ -52,140 +52,90 @@ if (isset($_SESSION['email'])) {
         </div>
 
 
-        
-        <div class="form-modal">
-
-            <div class="form-toggle">
-                <button id="aktivne-toggle" onclick="toggleAktivne()">Aktivne</button>
-                <button id="izvrsene-toggle" onclick="toggleIzvrsene()">Izvršene</button>
-                <button id="odbijene-toggle" onclick="toggleOdbijene()"> Odbijene</button>
+        <div class="form-modal" id="slika">
+            <img class="restoran" src="../../../../slike/restoran.jpg">
+            <div class="duzina1" onclick="ispisiNarudzbinuStola(this)">1
+                <div class="notifikacija hide" id="notifikacija1">!</div>
             </div>
-            <div id="divaktivne" class="divaktivne">
-                <div class="content">
-
-                    <div class="container">
-
-                        <div class="table-responsive" id="tabela-aktivne">
-
-
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Broj Stola</th>
-                                        <th scope="col">Ukupna Cena</th>
-                                        <th scope="col">Vreme narudžbine</th>
-                                        <th scope="col">Napomena</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-
-                                <tbody id="aktivne">
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+            <div class="duzina2" onclick="ispisiNarudzbinuStola(this)">2
+                <div class="notifikacija hide" id="notifikacija2">!</div>
             </div>
-            <div id="divizvrsene" class="divizvrsene">
-                <div class="content">
-
-                    <div class="container">
-
-
-                        <div class="table-responsive">
-
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Broj Stola</th>
-                                        <th scope="col">Ukupna Cena</th>
-                                        <th scope="col">Vreme narudžbine</th>
-                                        <th scope="col">Napomena</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-
-                                <tbody id="izvrsene">
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+            <div class="duzina3" onclick="ispisiNarudzbinuStola(this)">3
+                <div class="notifikacija hide" id="notifikacija3">!</div>
             </div>
-            <div id="divodbijene" class="divodbijene">
+            <div class="duzina4" onclick="ispisiNarudzbinuStola(this)">4
+                <div class="notifikacija hide" id="notifikacija4">!</div>
+            </div>
+            <div class="duzina5" onclick="ispisiNarudzbinuStola(this)">5
+                <div class="notifikacija hide" id="notifikacija5">!</div>
+            </div>
+            <div class="duzina6" onclick="ispisiNarudzbinuStola(this)">6
+                <div class="notifikacija hide" id="notifikacija6">!</div>
+            </div>
+            <div class="duzina7" onclick="ispisiNarudzbinuStola(this)">7
+                <div class="notifikacija hide" id="notifikacija7">!</div>
+            </div>
+            <div class="duzina8" onclick="ispisiNarudzbinuStola(this)">8
+                <div class="notifikacija hide" id="notifikacija8">!</div>
+            </div>
+            <div class="duzina9" onclick="ispisiNarudzbinuStola(this)">9
+                <div class="notifikacija hide" id="notifikacija9">!</div>
+            </div>
+            <div class="duzina10" onclick="ispisiNarudzbinuStola(this)">10
+                <div class="notifikacija hide" id="notifikacija10">!</div>
+            </div>
+            <div class="duzina11" onclick="ispisiNarudzbinuStola(this)">11
+                <div class="notifikacija hide" id="notifikacija11">!</div>
+            </div>
+            <div class="duzina12" onclick="ispisiNarudzbinuStola(this)">12
+                <div class="notifikacija hide" id="notifikacija12">!</div>
+            </div>
 
-                <div class="content">
+            <div class="popup-box-container">
+                <div class="products-container" id="ispis">
 
-                    <div class="container">
-
-
-                        <div class="table-responsive">
-
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Broj Stola</th>
-                                        <th scope="col">Ukupna Cena</th>
-                                        <th scope="col">Vreme narudžbine</th>
-                                        <th scope="col">Napomena</th>
-                                        <th scope="col"></th>
-                                    </tr>
-                                </thead>
-                                <tbody id="odbijene">
-
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
                 </div>
+                
+
             </div>
         </div>
+
         <script src="narudzbine.js"> </script>
 
 
 
     </body>
     <script>
-        function toggleIzvrsene() {
-            document.getElementById("aktivne-toggle").style.backgroundColor = "#f9f9f9";
-            document.getElementById("aktivne-toggle").style.color = "#333";
-            document.getElementById("izvrsene-toggle").style.backgroundColor = "#333";
-            document.getElementById("izvrsene-toggle").style.color = "#ffb266";
-            document.getElementById("odbijene-toggle").style.backgroundColor = "#f9f9f9";
-            document.getElementById("odbijene-toggle").style.color = "#333";
-            document.getElementById("divaktivne").style.display = "none";
-            document.getElementById("divizvrsene").style.display = "block";
-            document.getElementById("divodbijene").style.display = "none";
-        }
+        const dugme1 = document.getElementById("cta");
+        const dropdown = document.getElementById("myDropdown");
+        dugme1.addEventListener("click", () => {
+            if (dropdown.classList.contains('show')) {
+                dropdown.classList.remove("show");
+                dropdown.classList.add("hide");
+            } else {
+                dropdown.classList.remove("hide");
+                dropdown.classList.add("show");
+            }
+        });
 
-        function toggleAktivne() {
-            document.getElementById("aktivne-toggle").style.backgroundColor = "#333";
-            document.getElementById("aktivne-toggle").style.color = "#ffb266";
-            document.getElementById("izvrsene-toggle").style.backgroundColor = "#f9f9f9";
-            document.getElementById("izvrsene-toggle").style.color = "#333";
-            document.getElementById("odbijene-toggle").style.backgroundColor = "#f9f9f9";
-            document.getElementById("odbijene-toggle").style.color = "#333";
-            document.getElementById("divaktivne").style.display = "block";
-            document.getElementById("divizvrsene").style.display = "none";
-            document.getElementById("divodbijene").style.display = "none";
-        }
 
-        function toggleOdbijene() {
-            document.getElementById("aktivne-toggle").style.backgroundColor = "#f9f9f9";
-            document.getElementById("aktivne-toggle").style.color = "#333";
-            document.getElementById("izvrsene-toggle").style.backgroundColor = "#f9f9f9";
-            document.getElementById("izvrsene-toggle").style.color = "#333";
-            document.getElementById("odbijene-toggle").style.backgroundColor = "#333";
-            document.getElementById("odbijene-toggle").style.color = "#ffb266";
-            document.getElementById("divaktivne").style.display = "none";
-            document.getElementById("divizvrsene").style.display = "none";
-            document.getElementById("divodbijene").style.display = "block";
-        }
+        const dugme = document.getElementById("stik");
+        const dugx = document.getElementById("x");
+        const notifikacija = document.getElementsByClassName("notifikacija");
+        dugme.addEventListener("click", () => {
+            for (let i = 0; i < notifikacija.length; i++) {
+                notifikacija[i].classList.remove("show");
+                notifikacija[i].classList.add("hide");
+            }
+
+        });
+        dugx.addEventListener("click", () => {
+            for (let i = 0; i < notifikacija.length; i++) {
+                notifikacija[i].classList.remove("show");
+                notifikacija[i].classList.add("hide");
+            }
+        });
     </script>
-
-    </html>
 
     </html>
 <?php
