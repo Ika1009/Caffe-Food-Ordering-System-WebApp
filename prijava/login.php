@@ -60,6 +60,7 @@
     } else {
         header('Location: ../admin/admin.php');
     }} else {
+        // if() ajmo sad upiti
         header('Location: ../strane/ponuda/ponuda.php');
     }
     
