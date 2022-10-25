@@ -20,14 +20,14 @@ if (isset($_SESSION['user_pin'])) {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
         <script src="https://kit.fontawesome.com/a572b64406.js" crossorigin="anonymous"></script>
         <title>Artikli</title>
-        <link href="../../slike/tab-logo.png" rel="icon">
+        <link href="../../../../slike/tab-logo.png" rel="icon">
         <link rel="stylesheet" href="artikli.css">
 
     </head>
 
     <body>
         <header>
-            <a class="logo"><img src="../../slike/lets-order-logo.png" alt="logo" width="auto" height="77px"></a>
+            <a class="logo"><img src="../../../../slike/lets-order-logo.png" alt="logo" width="auto" height="77px"></a>
             <nav>
                 <ul class="nav__links">
                     <li><a href="../narudzbine/narudzbine.php">Orders</a></li>

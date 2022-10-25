@@ -51,6 +51,10 @@ okbtn2.addEventListener("click", () => {
   popupbox2.classList.add("aktivanpopup");
 });
 
+okbtn.addEventListener("click", () => { // da se izbaci popup u ponudi
+
+});
+
 okbtn.addEventListener("click", setCookie2);
 okbtn.addEventListener("click", setCookie3);
 okbtn.addEventListener("click", setCookie4);
