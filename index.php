@@ -23,7 +23,7 @@ if ($row['usrati?'] == 1)
 {
     header('Location: usrati.html');
 } else {
-    header('Location: prijava/login.php');
+    header('Location: infopage');
 }
 
    
