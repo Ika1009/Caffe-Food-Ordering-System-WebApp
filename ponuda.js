@@ -52,6 +52,8 @@ okbtn2.addEventListener("click", () => {
 });
 
 okbtn.addEventListener("click", () => { // da se izbaci popup u ponudi
+  
+  
 
 });
 

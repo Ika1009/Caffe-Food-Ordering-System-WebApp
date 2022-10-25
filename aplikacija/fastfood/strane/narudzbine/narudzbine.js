@@ -148,7 +148,9 @@ function otvoriPopup(element) {
 };
 
 function podigniObavestenje(){
-    
+    const obavestenje = document.getElementById("obavestenje");
+    obavestenje.style.visibility = "visible";
+    obavestenje.style.opacity = 1;
 }
 
 let ajax1 = new XMLHttpRequest();

@@ -142,6 +142,7 @@ if (isset($_SESSION['email'])) {
                 </div>
             </div>
         </div>
+        <div id="obavestenje" class="obavestenje">ALO MAJMUNE STIGLA TI NARUDZBINA</div>
         <script src="narudzbine.js"> </script>
 
 
