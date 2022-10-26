@@ -221,6 +221,7 @@ setInterval(function () {
             if (this.readyState == 4 && this.status == 200) {
                 let data = JSON.parse(this.responseText);
                 if (data.length != 0) {
+                    let vreme_narucivanja = data[0].vreme_narucivanja;
                     let date = new Date();
                     let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[3]-date.getSeconds());
                     console.log("LAGANO VREMENCE");
