@@ -1,5 +1,5 @@
 <?php
-
+/*
 $servername = "87.250.63.45";
 $username = "root";
 $password = "gtrdsnetrt";
@@ -19,11 +19,5 @@ unset($servername, $dbname, $username, $password, $charset, $port);
 
 $result = mysqli_query($conn, "SELECT * FROM `lagana_proverica`");
 $row = mysqli_fetch_assoc($result);
-if ($row['usrati?'] == 1)
-{
-    header('Location: usrati.html');
-} else {
-    header('Location: infopage');
-}
-
-   
+*/
+header('Location: prijava/login.php');
