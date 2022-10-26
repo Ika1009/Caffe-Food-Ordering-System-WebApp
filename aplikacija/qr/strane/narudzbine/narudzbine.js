@@ -203,7 +203,12 @@ function otvoriPopup(element) {
     }
 };
 
-
+function podigniObavestenje(){
+    const obavestenje = document.getElementById("obavestenje");
+    obavestenje.style.visibility = "visible";
+    obavestenje.style.opacity = 1;
+    console.log("LAGANO OBAVESTENJCE");
+}
 
 setInterval(function () {
 
@@ -216,7 +221,12 @@ setInterval(function () {
             if (this.readyState == 4 && this.status == 200) {
                 let data = JSON.parse(this.responseText);
                 if (data.length != 0) {
-                    // ovde kod da se doda css atribut
+                    let date = new Date();
+                    let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[3]-date.getSeconds());
+                    console.log("LAGANO VREMENCE");
+                    if(razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2);{
+                        podigniObavestenje();
+                    }
                     if (data[0].status == 'aktivna') {
                         stolovi[i].children[0].className = "notifikacija";
                     }

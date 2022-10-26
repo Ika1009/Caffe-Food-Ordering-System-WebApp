@@ -24,6 +24,31 @@
   box-shadow: 0 2px 20px 0px rgba(0, 0, 0, 0.35);
 }
 
+.obavestenje {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 400px;
+  padding: 6px;
+  background-color: #cccccc;
+  color:#333;
+  text-align: center;
+  border: 1px solid #aaaaaa;
+  border-radius: 5px;
+  box-shadow: 0 0 10 rgb(41, 40, 40);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s, visibility 0.2s, top 0.2s;
+}
+
+.obavestenje--vidljivo{
+  top:20px;
+  opacity: 1;
+  visibility: visible;
+}
+
 .naslov1 {
   width: 100%;
   text-align: left;
