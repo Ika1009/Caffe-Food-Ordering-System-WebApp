@@ -151,6 +151,7 @@ function podigniObavestenje(){
     const obavestenje = document.getElementById("obavestenje");
     obavestenje.style.visibility = "visible";
     obavestenje.style.opacity = 1;
+    console.log("LAGANO OBAVESTENJCE");
 }
 
 let ajax1 = new XMLHttpRequest();
@@ -170,6 +171,7 @@ setInterval(function () {
                 let vreme_narucivanja = data[i].vreme_narucivanja;
                 let date = new Date();
                 let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[3]-date.getSeconds());
+                console.log("LAGANO VREMENCE");
                 if(razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2);{
                     podigniObavestenje();
                 }
