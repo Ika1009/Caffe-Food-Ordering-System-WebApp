@@ -18,7 +18,7 @@ if (isset($_SESSION['email'])) {
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <script src="https://kit.fontawesome.com/a572b64406.js" crossorigin="anonymous"></script>
-        <script src="ponuda.js" defer></script>
+        <script type="module" src="ponuda.js" defer></script>
         <title>Ponuda</title>
         <link href="../../slike/tab-logo.png" rel="icon">
     </head>
