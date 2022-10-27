@@ -203,14 +203,9 @@ function otvoriPopup(element) {
     }
 };
 
+import {notifikacija} from "/notifikacija.js";
 
 setInterval(function () {
-    function podigniObavestenje(){
-        const obavestenje = document.getElementById("obavestenje");
-        obavestenje.style.visibility = "visible";
-        obavestenje.style.opacity = 1;
-        console.log("LAGANO OBAVESTENJCE");
-    }
 
     for (let i = 1; i < stolovi.length - 1; i++) { // treba da se doda kad je ovamo 00 a ovamo 59
         let broj_stola = stolovi[i].innerText.match(/(\d+)/)[0];
@@ -225,10 +220,10 @@ setInterval(function () {
                     let date = new Date();
                     let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
                     console.log("Razlika sekundi je: " + razlikaSekundi + ", Vreme Narucivanja: " + vreme_narucivanja + ", a trenutno je: " + date.getSeconds());
-                    let provera = data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2);
-                    console.log("Provera: " + provera);
+                    //let provera = data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2);
+                    //console.log("Provera: " + provera);
                     if(data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2)){
-                        podigniObavestenje();
+                        notifikacija();
                     }
                     if (data[0].status == "aktivna") {
                         stolovi[i].children[0].className = "notifikacija";

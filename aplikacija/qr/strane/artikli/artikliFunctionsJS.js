@@ -1,5 +1,7 @@
 // Izvrsavaju pri ulasku na sajt
 
+import { notifikacija } from "../narudzbine/notifikacija";
+
 let ajax = new XMLHttpRequest();
 ajax.open("GET", "./APIs/data.php", true);
 ajax.send();
@@ -365,14 +367,6 @@ dugme.addEventListener("click", () => {
 
 
 setInterval(function () {
-
-    function podigniObavestenje(){
-      const obavestenje = document.getElementById("obavestenje");
-      obavestenje.style.visibility = "visible";
-      obavestenje.style.opacity = 1;
-      console.log("LAGANO OBAVESTENJCE");
-    }
-  
       let ajax = new XMLHttpRequest();
       ajax.open("GET", "../narudzbine/APIs/dataAllTables.php", true);
       ajax.send();
@@ -387,11 +381,10 @@ setInterval(function () {
                   let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
                   console.log("Razlika sekundi je: " + razlikaSekundi + "Vreme Narucivanja: " + vreme_narucivanja + "A trenutno je: " + date.getSeconds());
                   if(data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2));{
-                    podigniObavestenje();
+                    notifikacija();
                     }
                 } 
               }
           }
       }
-  
-  }, 15000);
+  }, 3000);
