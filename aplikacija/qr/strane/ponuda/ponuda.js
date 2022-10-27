@@ -264,6 +264,12 @@ naruci.addEventListener("click", () => {
 okbtn.addEventListener("click", setCookie2);
 okbtn.addEventListener("click", setCookie3);
 
+import { notifikacija } from "../narudzbine/notifikacija.js";
+
+okbtn.addEventListener("click", function klikNotifikacija() {
+  notifikacija();
+});
+
 exit.addEventListener("click", () => {
   popupbox.classList.remove("aktivanpopup");
 });
