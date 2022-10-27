@@ -224,8 +224,10 @@ setInterval(function () {
                     let vreme_narucivanja = data[0].vreme_narucivanja;
                     let date = new Date();
                     let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
-                    console.log("Razlika sekundi je: " + razlikaSekundi + "Vreme Narucivanja: " + vreme_narucivanja + "A trenutno je: " + date.getSeconds());
-                    if(data[0].status == "aktivna" && razlikaSekundi != NaN && razlikaSekundi == 0);{
+                    console.log("Razlika sekundi je: " + razlikaSekundi + ", Vreme Narucivanja: " + vreme_narucivanja + ", a trenutno je: " + date.getSeconds());
+                    //let provera = 
+                    //console.log("Provera: " + provera);
+                    if(data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2){
                         podigniObavestenje();
                     }
                     if (data[0].status == "aktivna") {
