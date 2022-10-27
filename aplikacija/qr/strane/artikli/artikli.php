@@ -11,8 +11,8 @@ if (isset($_SESSION['user_pin'])) {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"><!/script>
-        <!script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"><!/script>
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -122,7 +122,6 @@ if (isset($_SESSION['user_pin'])) {
                 </div>
             </div>
         </div>
-        <div id="obavestenje" class="obavestenje">Alo majmune narudzbina ti stigla</div>
         <script type="model" src="artikliFunctionsJS.js" defer></script>
         <script defer>
             let popup = document.getElementById("popup-overlay1");
