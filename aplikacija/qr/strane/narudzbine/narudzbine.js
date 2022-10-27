@@ -212,7 +212,7 @@ setInterval(function () {
         console.log("LAGANO OBAVESTENJCE");
     }
 
-    for (let i = 1; i < stolovi.length - 1; i++) {
+    for (let i = 1; i < stolovi.length - 1; i++) { // treba da se doda kad je ovamo 00 a ovamo 59
         let broj_stola = stolovi[i].innerText.match(/(\d+)/)[0];
         let ajax = new XMLHttpRequest();
         ajax.open("GET", "./APIs/data.php?broj_stola=" + broj_stola, true);
@@ -223,18 +223,21 @@ setInterval(function () {
                 if (data.length != 0) {
                     let vreme_narucivanja = data[0].vreme_narucivanja;
                     let date = new Date();
-                    let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[3]-date.getSeconds());
-                    if(razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2);{
+                    let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
+                    console.log("Razlika sekundi je: " + razlikaSekundi + ", Vreme Narucivanja: " + vreme_narucivanja + ", a trenutno je: " + date.getSeconds());
+                    let provera = data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2);
+                    console.log("Provera: " + provera);
+                    if(data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2)){
                         podigniObavestenje();
                     }
-                    if (data[0].status == 'aktivna') {
+                    if (data[0].status == "aktivna") {
                         stolovi[i].children[0].className = "notifikacija";
                     }
-                    if (data[0].status == 'izvrsena') {
+                    if (data[0].status == "izvrsena") {
                         stolovi[i].children[0].className = "hide";
                     }
                 }
             }
         }
     }
-}, 5000);
+}, 15000);
