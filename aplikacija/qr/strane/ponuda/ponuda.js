@@ -399,8 +399,8 @@ dugme.addEventListener("click", () => {
   }
 });
 
-/*
-setInterval(function () {
+
+setInterval(function () { // spamuje trenutno previse
   let ajax = new XMLHttpRequest();
   ajax.open("GET", "../narudzbine/APIs/dataAllTables.php", true);
   ajax.send();
@@ -410,15 +410,18 @@ setInterval(function () {
           if (data.length != 0) {
             for(let i = 0; i < data.length; i++)
             {
-              let vreme_narucivanja = data[i].vreme_narucivanja;
-              let date = new Date();
-              let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
-              console.log("Razlika sekundi je: " + razlikaSekundi + "Vreme Narucivanja: " + vreme_narucivanja + "A trenutno je: " + date.getSeconds());
-              if(data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2));{
-                notifikacija();
-                }
+              if(data[i].status == "aktivna")
+              {
+                let vreme_narucivanja = data[i].vreme_narucivanja;
+                let date = new Date();
+                let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
+                console.log("Razlika sekundi je: " + razlikaSekundi + "Vreme Narucivanja: " + vreme_narucivanja + "A trenutno je: " + date.getSeconds());
+                if(data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2));{
+                  notifikacija();
+                  }
+              }
             } 
           }
       }
   }
-}, 3000);*/
+}, 3000);
