@@ -223,15 +223,15 @@ setInterval(function () {
                 if (data.length != 0) {
                     let vreme_narucivanja = data[0].vreme_narucivanja;
                     let date = new Date();
-                    let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[3]-date.getSeconds());
+                    let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
                     console.log("Razlika sekundi je: " + razlikaSekundi + "Vreme Narucivanja: " + vreme_narucivanja + "A trenutno je: " + date.getSeconds());
-                    if(razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2);{
+                    if(data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2));{
                         podigniObavestenje();
                     }
-                    if (data[0].status == 'aktivna') {
+                    if (data[0].status == "aktivna") {
                         stolovi[i].children[0].className = "notifikacija";
                     }
-                    if (data[0].status == 'izvrsena') {
+                    if (data[0].status == "izvrsena") {
                         stolovi[i].children[0].className = "hide";
                     }
                 }

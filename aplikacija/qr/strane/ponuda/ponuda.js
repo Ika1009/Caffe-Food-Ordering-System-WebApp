@@ -422,9 +422,9 @@ setInterval(function () {
               {
                 let vreme_narucivanja = data[i].vreme_narucivanja;
                 let date = new Date();
-                let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[3]-date.getSeconds());
-                if(razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2);{
-                    podigniObavestenje();
+                let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
+                if(razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2));{
+                  podigniObavestenje();
                 }
               } 
             }
