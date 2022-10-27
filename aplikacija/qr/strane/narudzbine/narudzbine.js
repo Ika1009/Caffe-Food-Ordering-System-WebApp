@@ -203,7 +203,7 @@ function otvoriPopup(element) {
     }
 };
 
-import {notifikacija} from "./notifikacija";
+//import {notifikacija} from "./notifikacija";
 
 setInterval(function () {
 
@@ -223,7 +223,7 @@ setInterval(function () {
                     //let provera = data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2);
                     //console.log("Provera: " + provera);
                     if(data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2)){
-                        notifikacija();
+                        //notifikacija();
                     }
                     if (data[0].status == "aktivna") {
                         stolovi[i].children[0].className = "notifikacija";
