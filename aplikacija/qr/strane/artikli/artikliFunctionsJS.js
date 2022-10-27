@@ -386,7 +386,7 @@ setInterval(function () {
                   let date = new Date();
                   let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
                   console.log("Razlika sekundi je: " + razlikaSekundi + "Vreme Narucivanja: " + vreme_narucivanja + "A trenutno je: " + date.getSeconds());
-                  if(razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2));{
+                  if(data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2));{
                     podigniObavestenje();
                     }
                 } 
