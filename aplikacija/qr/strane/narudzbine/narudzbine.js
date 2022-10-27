@@ -203,7 +203,7 @@ function otvoriPopup(element) {
     }
 };
 
-import {notifikacija} from "/notifikacija.js";
+import {notifikacija} from "./notifikacija";
 
 setInterval(function () {
 
