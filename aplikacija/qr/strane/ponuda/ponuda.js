@@ -250,8 +250,6 @@ const search = () => {
   }
 };
 
-
-
 const naruci = document.querySelector(".button-27");
 const okbtn = document.querySelector(".ok-btn");
 const popupbox = document.querySelector(".popup-overlay");
@@ -261,10 +259,11 @@ naruci.addEventListener("click", () => {
   popupbox.classList.add("aktivanpopup");
 });
 
+okbtn.addEventListener("click", setCookie);
 okbtn.addEventListener("click", setCookie2);
 okbtn.addEventListener("click", setCookie3);
 
-import { notifikacija } from "../narudzbine/notifikacija.js";
+import {notifikacija} from "../narudzbine/notifikacija.js";
 
 okbtn.addEventListener("click", function klikNotifikacija() {
   notifikacija();
@@ -399,37 +398,3 @@ dugme.addEventListener("click", () => {
     dropdown.classList.add("show");
   }
 });
-
-
-
-setInterval(function () {
-
-  function podigniObavestenje(){
-    const obavestenje = document.getElementById("obavestenje");
-    obavestenje.style.visibility = "visible";
-    obavestenje.style.opacity = 1;
-    console.log("LAGANO OBAVESTENJCE");
-  }
-
-    let ajax = new XMLHttpRequest();
-    ajax.open("GET", "../narudzbine/APIs/dataAllTables.php", true);
-    ajax.send();
-    ajax.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            let data = JSON.parse(this.responseText);
-            if (data.length != 0) {
-              for(let i = 0; i < data.length; i++)
-              {
-                let vreme_narucivanja = data[i].vreme_narucivanja;
-                let date = new Date();
-                let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
-                if(data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2));{
-                  podigniObavestenje();
-                }
-              } 
-            }
-        }
-    }
-
-}, 5000);
-

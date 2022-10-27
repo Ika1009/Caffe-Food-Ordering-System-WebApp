@@ -18,7 +18,7 @@ if (isset($_SESSION['email'])) {
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <script src="https://kit.fontawesome.com/a572b64406.js" crossorigin="anonymous"></script>
-        <script src="ponuda.js" defer></script>
+        <script type="module" src="ponuda.js" defer></script>
         <title>Ponuda</title>
         <link href="../../slike/tab-logo.png" rel="icon">
     </head>
@@ -62,12 +62,10 @@ if (isset($_SESSION['email'])) {
             </div>
         </div>
 
-
-
-
         <div class="divdugmenaruci" id="sakrij" hidden>
             <button class="button-27" role="button">Naruči za <span>0</span></button>
         </div>
+        
         <div class="popup-overlay">
             <div class="popup-box-container">
                 <div class="cart">
@@ -98,7 +96,6 @@ if (isset($_SESSION['email'])) {
             </div>
         </div>
         </div>
-        <div id="obavestenje" class="obavestenje">Alo majmune narudzbina ti stigla</div>
     </body>
 
     </html>
