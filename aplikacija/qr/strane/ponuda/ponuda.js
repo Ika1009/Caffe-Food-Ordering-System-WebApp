@@ -399,7 +399,7 @@ dugme.addEventListener("click", () => {
   }
 });
 
-
+/*
 setInterval(function () {
   let ajax = new XMLHttpRequest();
   ajax.open("GET", "../narudzbine/APIs/dataAllTables.php", true);
@@ -421,4 +421,4 @@ setInterval(function () {
           }
       }
   }
-}, 3000);
+}, 3000);*/
