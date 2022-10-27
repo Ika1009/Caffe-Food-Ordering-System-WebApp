@@ -25,7 +25,7 @@ if (isset($_POST['ime_firme']) && isset($_POST['lozinka'])) {
                 } else {
                     $_SESSION['ime_firme'] = $row['ime_firme'];
                     $_SESSION['email'] = $row['email'];
-                    header("Location: ../strane/ponuda/ponuda.php");
+                    header("Location: ../aplikacija/qr/strane/ponuda/ponuda.php");
                 }
             } else {
                 header("Location: login.php?error=Pogrešno ime firme ili lozinka&ime_firme=$ime_firme");
