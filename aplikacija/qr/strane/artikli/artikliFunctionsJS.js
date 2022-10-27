@@ -385,6 +385,7 @@ setInterval(function () {
                   let vreme_narucivanja = data[i].vreme_narucivanja;
                   let date = new Date();
                   let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[3]-date.getSeconds());
+                  console.log("Razlika sekundi je: " + razlikaSekundi + "Vreme Narucivanja: " + vreme_narucivanja + "Razlika je: " + razlikaSekundi);
                   if(razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2);{
                       podigniObavestenje();
                   }
