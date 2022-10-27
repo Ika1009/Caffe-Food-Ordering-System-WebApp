@@ -3,14 +3,14 @@ stolovi = document.getElementById("slika").children;
 
 for (let i = 1; i < stolovi.length - 1; i++) {
     let broj_stola = stolovi[i].innerText.match(/(\d+)/)[0];
-    console.log(broj_stola)
+    //console.log(broj_stola)
     let ajax = new XMLHttpRequest();
     ajax.open("GET", "./APIs/data.php?broj_stola=" + broj_stola, true);
     ajax.send();
     ajax.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let data = JSON.parse(this.responseText);
-            console.log(data);
+            //console.log(data);
             if (data.length != 0) {
                 // ovde kod da se doda css atribut
                 if (data[0].status == 'aktivna') {
@@ -203,14 +203,14 @@ function otvoriPopup(element) {
     }
 };
 
-function podigniObavestenje(){
-    const obavestenje = document.getElementById("obavestenje");
-    obavestenje.style.visibility = "visible";
-    obavestenje.style.opacity = 1;
-    console.log("LAGANO OBAVESTENJCE");
-}
 
 setInterval(function () {
+    function podigniObavestenje(){
+        const obavestenje = document.getElementById("obavestenje");
+        obavestenje.style.visibility = "visible";
+        obavestenje.style.opacity = 1;
+        console.log("LAGANO OBAVESTENJCE");
+    }
 
     for (let i = 1; i < stolovi.length - 1; i++) {
         let broj_stola = stolovi[i].innerText.match(/(\d+)/)[0];
@@ -224,7 +224,6 @@ setInterval(function () {
                     let vreme_narucivanja = data[0].vreme_narucivanja;
                     let date = new Date();
                     let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[3]-date.getSeconds());
-                    console.log("LAGANO VREMENCE");
                     if(razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2);{
                         podigniObavestenje();
                     }
