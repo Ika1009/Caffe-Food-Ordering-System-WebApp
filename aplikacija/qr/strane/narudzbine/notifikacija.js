@@ -1,4 +1,5 @@
 function notifikacija() {
+  console.log("LAGANO OBAVESENJCE ALEEE");
   Notification.requestPermission().then((perm) => {
     if (perm === "granted") {
       const notification = new Notification("Imate nove narudzbine", {
