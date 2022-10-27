@@ -227,7 +227,7 @@ setInterval(function () {
                     console.log("Razlika sekundi je: " + razlikaSekundi + ", Vreme Narucivanja: " + vreme_narucivanja + ", a trenutno je: " + date.getSeconds());
                     //let provera = 
                     //console.log("Provera: " + provera);
-                    if(data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2){
+                    if(data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2)){
                         podigniObavestenje();
                     }
                     if (data[0].status == "aktivna") {
