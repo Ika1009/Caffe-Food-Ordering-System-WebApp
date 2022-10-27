@@ -212,7 +212,7 @@ setInterval(function () {
         console.log("LAGANO OBAVESTENJCE");
     }
 
-    for (let i = 1; i < stolovi.length - 1; i++) {
+    for (let i = 1; i < stolovi.length - 1; i++) { // treba da se doda kad je ovamo 00 a ovamo 59
         let broj_stola = stolovi[i].innerText.match(/(\d+)/)[0];
         let ajax = new XMLHttpRequest();
         ajax.open("GET", "./APIs/data.php?broj_stola=" + broj_stola, true);
@@ -225,7 +225,7 @@ setInterval(function () {
                     let date = new Date();
                     let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
                     console.log("Razlika sekundi je: " + razlikaSekundi + "Vreme Narucivanja: " + vreme_narucivanja + "A trenutno je: " + date.getSeconds());
-                    if(data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2));{
+                    if(data[0].status == "aktivna" && razlikaSekundi != NaN && razlikaSekundi == 0);{
                         podigniObavestenje();
                     }
                     if (data[0].status == "aktivna") {
