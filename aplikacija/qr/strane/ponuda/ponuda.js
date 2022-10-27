@@ -395,3 +395,34 @@ dugme.addEventListener("click", () => {
 });
 
 
+
+setInterval(function () {
+  
+  function podigniObavestenje(){
+    const obavestenje = document.getElementById("obavestenje");
+    obavestenje.style.visibility = "visible";
+    obavestenje.style.opacity = 1;
+    console.log("LAGANO OBAVESTENJCE");
+  }
+
+  for (let i = 1; i < stolovi.length - 1; i++) {
+      let broj_stola = stolovi[i].innerText.match(/(\d+)/)[0];
+      let ajax = new XMLHttpRequest();
+      ajax.open("GET", "../narudzbine/APIs/data.php?broj_stola=" + broj_stola, true);
+      ajax.send();
+      ajax.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+              let data = JSON.parse(this.responseText);
+              if (data.length != 0) {
+                  let vreme_narucivanja = data[0].vreme_narucivanja;
+                  let date = new Date();
+                  let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[3]-date.getSeconds());
+                  if(razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2);{
+                      podigniObavestenje();
+                  }
+              }
+          }
+      }
+  }
+}, 5000);
+

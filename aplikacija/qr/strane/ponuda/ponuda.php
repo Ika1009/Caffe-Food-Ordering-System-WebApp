@@ -98,6 +98,7 @@ if (isset($_SESSION['email'])) {
             </div>
         </div>
         </div>
+        <div id="obavestenje" class="obavestenje">Alo majmune narudzbina ti stigla</div>
     </body>
 
     </html>

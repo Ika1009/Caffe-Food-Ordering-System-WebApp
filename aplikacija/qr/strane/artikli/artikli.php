@@ -122,6 +122,7 @@ if (isset($_SESSION['user_pin'])) {
                 </div>
             </div>
         </div>
+        <div id="obavestenje" class="obavestenje">Alo majmune narudzbina ti stigla</div>
         <script src="artikliFunctionsJS.js" defer></script>
         <script defer>
             let popup = document.getElementById("popup-overlay1");
