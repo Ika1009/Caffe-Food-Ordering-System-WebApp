@@ -62,12 +62,10 @@ if (isset($_SESSION['email'])) {
             </div>
         </div>
 
-
-
-
         <div class="divdugmenaruci" id="sakrij" hidden>
             <button class="button-27" role="button">Naruči za <span>0</span></button>
         </div>
+        
         <div class="popup-overlay">
             <div class="popup-box-container">
                 <div class="cart">
@@ -98,7 +96,6 @@ if (isset($_SESSION['email'])) {
             </div>
         </div>
         </div>
-        <div id="obavestenje" class="obavestenje">Alo majmune narudzbina ti stigla</div>
     </body>
 
     </html>

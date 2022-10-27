@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_POST['order'])) { 
-    include_once("../../db.php");
+    include_once("../../../db.php");
     $vreme_narucivanja = $_COOKIE['vreme_narucivanja'];
     $konacna_cena = $_COOKIE['narudzbina'];
     $detalji = $_COOKIE['detalji'];
