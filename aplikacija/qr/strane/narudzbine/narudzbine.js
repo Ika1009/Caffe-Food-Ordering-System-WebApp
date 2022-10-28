@@ -256,4 +256,4 @@ setInterval(function () {
         }
     }
 }, 3000);
-export {proveriVreme};
+//export {proveriVreme};
