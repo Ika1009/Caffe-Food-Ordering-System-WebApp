@@ -399,8 +399,10 @@ dugme.addEventListener("click", () => {
   }
 });
 
+import {proveriVreme} from "../narudzbine/narudzbine";
 
 setInterval(function () { // spamuje trenutno previse
+  
   let ajax = new XMLHttpRequest();
   ajax.open("GET", "../narudzbine/APIs/dataAllTables.php", true);
   ajax.send();
@@ -413,10 +415,7 @@ setInterval(function () { // spamuje trenutno previse
               if(data[i].status == "aktivna")
               {
                 let vreme_narucivanja = data[i].vreme_narucivanja;
-                let date = new Date();
-                let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
-                console.log("Razlika sekundi je: " + razlikaSekundi + "Vreme Narucivanja: " + vreme_narucivanja + "A trenutno je: " + date.getSeconds());
-                if(data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi==1 || razlikaSekundi==2));{
+                if(proveriVreme());{
                   notifikacija();
                   }
               }

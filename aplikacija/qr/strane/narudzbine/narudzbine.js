@@ -207,6 +207,31 @@ import {notifikacija} from "./notifikacija";
 
 setInterval(function () {
 
+    function proveriVreme(vreme_narucivanja)
+  {
+    let date = new Date();
+    let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
+    let razlikaMinuta = Math.abs(vreme_narucivanja.split(':')[1]-date.getMinutes());
+    let razlikaSati = Math.abs(vreme_narucivanja.split(':')[1].split(' ')[1]-date.getHours());
+    console.log("Razlika sekundi: " + razlikaSekundi + "\nRazlika minuta: " + razlikaMinuta + "\nRazlika sati: " + razlikaSati);
+    if(razlikaSekundi != NaN || razlikaMinuta != NaN || razlikaSati != NaN)
+      return false;
+    else if( (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2
+      || razlikaSekundi == 3) && razlikaMinuta == 0  && razlikaSati == 0){
+        return true;
+      }
+    else if(razlikaSati == 0 && razlikaMinuta == 1 && razlikaSekundi == 59
+      || razlikaSekundi == 58 || razlikaSekundi == 57){
+          return true;
+      }
+    else if(razlikaSati == 1 && razlikaMinuta == 59 && razlikaSekundi == 59
+      || razlikaSekundi == 58 || razlikaSekundi == 57){
+        return true;
+      }
+    else {return false}
+
+  }
+
     for (let i = 1; i < stolovi.length - 1; i++) { // treba da se doda kad je ovamo 00 a ovamo 59
         let broj_stola = stolovi[i].innerText.match(/(\d+)/)[0];
         let ajax = new XMLHttpRequest();
@@ -217,12 +242,7 @@ setInterval(function () {
                 let data = JSON.parse(this.responseText);
                 if (data.length != 0) {
                     let vreme_narucivanja = data[0].vreme_narucivanja;
-                    let date = new Date();
-                    let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
-                    console.log("Razlika sekundi je: " + razlikaSekundi + ", Vreme Narucivanja: " + vreme_narucivanja + ", a trenutno je: " + date.getSeconds());
-                    //let provera = data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2);
-                    //console.log("Provera: " + provera);
-                    if(data[0].status == "aktivna" && razlikaSekundi != NaN && (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2)){
+                    if(data[0].status == "aktivna" && proveriVreme(vreme_narucivanja)){
                         notifikacija();
                     }
                     if (data[0].status == "aktivna") {
@@ -236,3 +256,4 @@ setInterval(function () {
         }
     }
 }, 3000);
+export {proveriVreme};
