@@ -263,7 +263,7 @@ okbtn.addEventListener("click", setCookie);
 okbtn.addEventListener("click", setCookie2);
 okbtn.addEventListener("click", setCookie3);
 
-import {notifikacija} from "../narudzbine/notifikacija.js";
+//import {notifikacija} from "../narudzbine/notifikacija.js";
 
 okbtn.addEventListener("click", function klikNotifikacija() {
   notifikacija();

@@ -1,6 +1,6 @@
 // Izvrsavaju pri ulasku na sajt
 
-import { notifikacija } from "../narudzbine/notifikacija";
+//import { notifikacija } from "../narudzbine/notifikacija";
 
 let ajax = new XMLHttpRequest();
 ajax.open("GET", "./APIs/data.php", true);
