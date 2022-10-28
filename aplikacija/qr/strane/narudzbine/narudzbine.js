@@ -242,7 +242,7 @@ setInterval(function () {
                 let data = JSON.parse(this.responseText);
                 if (data.length != 0) {
                     let vreme_narucivanja = data[0].vreme_narucivanja;
-                    console.log("Provera: " + proveriVreme());
+                    console.log("Provera: " + proveriVreme(vreme_narucivanja));
                     if(data[0].status == "aktivna" && proveriVreme(vreme_narucivanja)){
                         notifikacija();
                     }
