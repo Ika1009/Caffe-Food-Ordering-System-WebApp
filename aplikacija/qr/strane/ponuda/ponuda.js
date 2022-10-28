@@ -399,7 +399,7 @@ dugme.addEventListener("click", () => {
   }
 });
 
-import {proveriVreme} from "../narudzbine/narudzbine";
+//import {proveriVreme} from "../narudzbine/narudzbine";
 
 setInterval(function () { // spamuje trenutno previse
   
