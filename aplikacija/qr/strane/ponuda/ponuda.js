@@ -400,7 +400,7 @@ dugme.addEventListener("click", () => {
 });
 
 //import {proveriVreme} from "../narudzbine/narudzbine";
-
+/*
 setInterval(function () { // spamuje trenutno previse
   
   let ajax = new XMLHttpRequest();
@@ -423,4 +423,4 @@ setInterval(function () { // spamuje trenutno previse
           }
       }
   }
-}, 3000);
+}, 3000);*/
