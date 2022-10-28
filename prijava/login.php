@@ -60,6 +60,6 @@
         header('Location: ../admin/admin.php');
     }} else {
         // if() ajmo sad upiti
-        header('Location: ../strane/ponuda/ponuda.php');
+        header('Location: ../aplikacija/qr/strane/ponuda/ponuda.php');
     }
     
