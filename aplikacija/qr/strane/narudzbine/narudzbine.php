@@ -119,10 +119,10 @@ if (isset($_SESSION['email'])) {
         });
 
 
-        const dugme = document.getElementById("stik");
-        const dugx = document.getElementById("x");
-        const notifikacija = document.getElementsByClassName("notifikacija");
-        dugme.addEventListener("click", () => {
+        //const dugme = document.getElementById("stik");
+        //const dugx = document.getElementById("x");
+        //const notifikacija = document.getElementsByClassName("notifikacija");
+        /*dugme.addEventListener("click", () => {
             for (let i = 0; i < notifikacija.length; i++) {
                 notifikacija[i].classList.remove("show");
                 notifikacija[i].classList.add("hide");
@@ -134,7 +134,7 @@ if (isset($_SESSION['email'])) {
                 notifikacija[i].classList.remove("show");
                 notifikacija[i].classList.add("hide");
             }
-        });
+        });*/
     </script>
 
     </html>
