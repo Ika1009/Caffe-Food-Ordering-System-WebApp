@@ -122,7 +122,7 @@ if (isset($_SESSION['user_pin'])) {
                 </div>
             </div>
         </div>
-        <script type="model" src="artikliFunctionsJS.js" defer></script>
+        <script src="artikliFunctionsJS.js" defer></script>
         <script defer>
             let popup = document.getElementById("popup-overlay1");
             let poputp = document.getElementById("popup")
