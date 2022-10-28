@@ -203,11 +203,11 @@ function otvoriPopup(element) {
     }
 };
 
-//import {notifikacija} from "./notifikacija";
+import {notifikacija} from "./notifikacija";
 
 setInterval(function () {
 
-    /*function proveriVreme(vreme_narucivanja)
+    function proveriVreme(vreme_narucivanja)
   {
     let date = new Date();
     let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
@@ -230,7 +230,7 @@ setInterval(function () {
       }
     else {return false}
 
-  }*/
+  }
 
     for (let i = 1; i < stolovi.length - 1; i++) { // treba da se doda kad je ovamo 00 a ovamo 59
         let broj_stola = stolovi[i].innerText.match(/(\d+)/)[0];
@@ -257,4 +257,3 @@ setInterval(function () {
         }
     }
 }, 3000);
-//export {proveriVreme};
