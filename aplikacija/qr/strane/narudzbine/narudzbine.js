@@ -230,8 +230,7 @@ setInterval(function () {
     console.log("Razlika sekundi: " + razlikaSekundi + "\nRazlika minuta: " + razlikaMinuta + "\nRazlika sati: " + razlikaSati);
     if(razlikaSekundi == NaN || razlikaMinuta == NaN || razlikaSati == NaN)
       return false;
-    else if( (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2
-      || razlikaSekundi == 3) && razlikaMinuta == 0  && razlikaSati == 0){
+    else if( (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2) && razlikaMinuta == 0  && razlikaSati == 0){
         return true;
       }
     else if(razlikaSati == 0 && razlikaMinuta == 1 && razlikaSekundi == 59
