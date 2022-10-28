@@ -228,7 +228,7 @@ setInterval(function () {
     let razlikaMinuta = Math.abs(vreme_narucivanja.split(':')[1]-date.getMinutes());
     let razlikaSati = Math.abs(vreme_narucivanja.split(':')[0].split(" ")[1]-date.getHours());
     console.log("Razlika sekundi: " + razlikaSekundi + "\nRazlika minuta: " + razlikaMinuta + "\nRazlika sati: " + razlikaSati);
-    if(razlikaSekundi != NaN || razlikaMinuta != NaN || razlikaSati != NaN)
+    if(razlikaSekundi == NaN || razlikaMinuta == NaN || razlikaSati == NaN)
       return false;
     else if( (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2
       || razlikaSekundi == 3) && razlikaMinuta == 0  && razlikaSati == 0){
