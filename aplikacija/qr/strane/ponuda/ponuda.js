@@ -451,7 +451,7 @@ setInterval(function () {
               for(let i = 0; i < data.length; i++)
               {
                 console.log("Za podatak na mestu: " + i + ", proveri vreme je: " + proveriVreme(data[i].vreme_narucivanja));
-                if(data[i].status == "aktivna" && proveriVreme(data[i].vreme_narucivanja));{
+                if(data[i].status == "aktivna" && proveriVreme(data[i].vreme_narucivanja)){
                   notifikacija();
                   }
               } 
