@@ -390,7 +390,7 @@ setInterval(function () {
     let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
     let razlikaMinuta = Math.abs(vreme_narucivanja.split(':')[1]-date.getMinutes());
     let razlikaSati = Math.abs(vreme_narucivanja.split(':')[0].split(" ")[1]-date.getHours());
-    console.log("Razlika sekundi: " + razlikaSekundi + "\nRazlika minuta: " + razlikaMinuta + "\nRazlika sati: " + razlikaSati);
+    //console.log("Razlika sekundi: " + razlikaSekundi + "\nRazlika minuta: " + razlikaMinuta + "\nRazlika sati: " + razlikaSati);
     if(razlikaSekundi == NaN || razlikaMinuta == NaN || razlikaSati == NaN)
       return false;
     else if( (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2) && razlikaMinuta == 0  && razlikaSati == 0){
@@ -413,11 +413,11 @@ setInterval(function () {
       ajax.onreadystatechange = function () {
           if (this.readyState == 4 && this.status == 200) {
               let data = JSON.parse(this.responseText);
-              console.log(data);
+              //console.log(data);
               if (data.length != 0) {
                 for(let i = 0; i < data.length; i++)
                 {
-                  console.log("Za podatak na mestu: " + i + ", proveri vreme je: " + proveriVreme(data[i].vreme_narucivanja));
+                  //console.log("Za podatak na mestu: " + i + ", proveri vreme je: " + proveriVreme(data[i].vreme_narucivanja));
                   if(data[i].status == "aktivna" && proveriVreme(data[i].vreme_narucivanja)){
                     notifikacija();
                     }
