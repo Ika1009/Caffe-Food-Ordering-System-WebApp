@@ -458,4 +458,4 @@ setInterval(function () {
             }
         }
     }
-}, 15000);
+}, 3000);
