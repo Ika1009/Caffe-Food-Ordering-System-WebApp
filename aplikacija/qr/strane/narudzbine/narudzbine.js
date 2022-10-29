@@ -244,21 +244,29 @@ setInterval(function () {
     else {return false}
 
   }
-      let ajax = new XMLHttpRequest();
-      ajax.open("GET", "../narudzbine/APIs/dataAllTables.php", true);
-      ajax.send();
-      ajax.onreadystatechange = function () {
-          if (this.readyState == 4 && this.status == 200) {
-              let data = JSON.parse(this.responseText);
-              console.log(data);
-              if (data.length != 0) {
-                for(let i = 0; i < data.length; i++)
-                {
-                  if(data[0].status == "aktivna" && proveriVreme(data[i].vreme_narucivanja));{
-                    notifikacija();
+
+    for (let i = 1; i < stolovi.length - 1; i++) { // treba da se doda kad je ovamo 00 a ovamo 59
+        let broj_stola = stolovi[i].innerText.match(/(\d+)/)[0];
+        let ajax = new XMLHttpRequest();
+        ajax.open("GET", "./APIs/data.php?broj_stola=" + broj_stola, true);
+        ajax.send();
+        ajax.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                let data = JSON.parse(this.responseText);
+                if (data.length != 0) {
+                    let vreme_narucivanja = data[0].vreme_narucivanja;
+                    console.log("Provera: " + proveriVreme(vreme_narucivanja));
+                    if(data[0].status == "aktivna" && proveriVreme(vreme_narucivanja)){
+                        notifikacija();
                     }
-                } 
-              }
-          }
-      }
-  }, 3000);
+                    if (data[0].status == "aktivna") {
+                        stolovi[i].children[0].className = "notifikacija";
+                    }
+                    if (data[0].status == "izvrsena") {
+                        stolovi[i].children[0].className = "hide";
+                    }
+                }
+            }
+        }
+    }
+}, 3000);
