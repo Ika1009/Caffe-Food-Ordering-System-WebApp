@@ -399,28 +399,62 @@ dugme.addEventListener("click", () => {
   }
 });
 
-//import {proveriVreme} from "../narudzbine/narudzbine";
-/*
-setInterval(function () { // spamuje trenutno previse
-  
-  let ajax = new XMLHttpRequest();
-  ajax.open("GET", "../narudzbine/APIs/dataAllTables.php", true);
-  ajax.send();
-  ajax.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 200) {
-          let data = JSON.parse(this.responseText);
-          if (data.length != 0) {
-            for(let i = 0; i < data.length; i++)
-            {
-              if(data[i].status == "aktivna")
+setInterval(function () {
+
+  function notifikacija() {
+      console.log("LAGANO OBAVESENJCE ALEEE");
+      Notification.requestPermission().then((perm) => {
+        if (perm === "granted") {
+          const notification = new Notification("Imate nove narudzbine", {
+            body: "Proverite Let's order za nove narudzbine",
+            icon: "../../../slike/lets-order-logo.png",
+          });
+    
+          notification.addEventListener("error", (e) => {
+            alert("error");
+          });
+        }
+      });
+    }
+
+  function proveriVreme(vreme_narucivanja)
+{
+  let date = new Date();
+  let razlikaSekundi = Math.abs(vreme_narucivanja.split(':')[2]-date.getSeconds());
+  let razlikaMinuta = Math.abs(vreme_narucivanja.split(':')[1]-date.getMinutes());
+  let razlikaSati = Math.abs(vreme_narucivanja.split(':')[0].split(" ")[1]-date.getHours());
+  console.log("Razlika sekundi: " + razlikaSekundi + "\nRazlika minuta: " + razlikaMinuta + "\nRazlika sati: " + razlikaSati);
+  if(razlikaSekundi == NaN || razlikaMinuta == NaN || razlikaSati == NaN)
+    return false;
+  else if( (razlikaSekundi == 0 || razlikaSekundi == 1 || razlikaSekundi == 2) && razlikaMinuta == 0  && razlikaSati == 0){
+      return true;
+    }
+  else if(razlikaSati == 0 && razlikaMinuta == 1 && razlikaSekundi == 59
+    || razlikaSekundi == 58 || razlikaSekundi == 57){
+        return true;
+    }
+  else if(razlikaSati == 1 && razlikaMinuta == 59 && razlikaSekundi == 59
+    || razlikaSekundi == 58 || razlikaSekundi == 57){
+      return true;
+    }
+  else {return false}
+
+}
+    let ajax = new XMLHttpRequest();
+    ajax.open("GET", "../narudzbine/APIs/dataAllTables.php", true);
+    ajax.send();
+    ajax.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let data = JSON.parse(this.responseText);
+            console.log(data);
+            if (data.length != 0) {
+              for(let i = 0; i < data.length; i++)
               {
-                let vreme_narucivanja = data[i].vreme_narucivanja;
-                if(proveriVreme());{
+                if(data[0].status == "aktivna" && proveriVreme(data[i].vreme_narucivanja));{
                   notifikacija();
                   }
-              }
-            } 
-          }
-      }
-  }
-}, 3000);*/
+              } 
+            }
+        }
+    }
+}, 3000);
