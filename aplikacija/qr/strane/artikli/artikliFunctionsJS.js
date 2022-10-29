@@ -383,7 +383,7 @@ setInterval(function () {
           }
         });
       }
-
+  
     function proveriVreme(vreme_narucivanja)
   {
     let date = new Date();
@@ -405,7 +405,7 @@ setInterval(function () {
         return true;
       }
     else {return false}
-
+  
   }
       let ajax = new XMLHttpRequest();
       ajax.open("GET", "../narudzbine/APIs/dataAllTables.php", true);
@@ -417,6 +417,7 @@ setInterval(function () {
               if (data.length != 0) {
                 for(let i = 0; i < data.length; i++)
                 {
+                  console.log("Za podatak" + data[i] + ", proveri vreme je: " + proveriVreme(data[i].vreme_narucivanja));
                   if(data[0].status == "aktivna" && proveriVreme(data[i].vreme_narucivanja));{
                     notifikacija();
                     }
@@ -424,4 +425,4 @@ setInterval(function () {
               }
           }
       }
-  }, 3000);
+  }, 15000);
