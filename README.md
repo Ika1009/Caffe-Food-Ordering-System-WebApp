@@ -1,4 +1,4 @@
-# 🍽️ ***QR Code Digital Menu for Restaurants, Cafes, & Bars*** 🍸
+# 🍽️ **QR Code Digital Menu for Restaurants, Cafes, & Bars** 🍸
 
 Welcome to the pinnacle of modern dining solutions. Designed with the nuances of the hospitality industry in mind, our full-fledged web application offers a unique fusion of innovation, elegance, and efficiency. Built atop the rock-solid LAMP stack, we guarantee an unmatched combination of reliability, performance, and scalability.
 
