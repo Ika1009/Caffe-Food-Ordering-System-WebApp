@@ -57,6 +57,16 @@ Whether you're the proud owner of a charming cafe tucked in a bustling city alle
 
 ---
 
-**Experience the future of dining**. With our solution by your side, elevate your establishment's efficiency, amplify revenues, and offer an unparalleled experience to your cherished patrons.
+## 🖼️ **Promotional Previews**
 
---- 
+Here’s a glimpse of the live system in action:
+
+![Promo 0](promo0.png)  
+![Promo 1](promo1.png)  
+![Promo 2](promo2.png)  
+![Promo 3](promo3.png)  
+![Promo 4](promo4.png)
+
+---
+
+**Experience the future of dining**. With our solution by your side, elevate your establishment's efficiency, amplify revenues, and offer an unparalleled experience to your cherished patrons.
