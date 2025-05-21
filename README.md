@@ -18,6 +18,7 @@ Experience the pulse of your restaurant live on-screen. Observe orders as they s
 
 Gone are the days of the flailing hand or the impatient tap on the glass. Patrons can now beckon servers digitally. Swift. Silent. Sophisticated.
 
+![Promo 0](promo0.png)  
 ---
 
 ## 💡 **Advanced Functionalities**
@@ -61,7 +62,7 @@ Whether you're the proud owner of a charming cafe tucked in a bustling city alle
 
 Here’s a glimpse of the live system in action:
 
-![Promo 0](promo0.png)  
+
 ![Promo 1](promo1.png)  
 ![Promo 2](promo2.png)  
 ![Promo 3](promo4.png)  
